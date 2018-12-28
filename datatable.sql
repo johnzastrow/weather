@@ -1,29 +1,3 @@
-CREATE TABLE `table_e1248m` (
-	`id` INT(11) auto_increment,
-	`Column 2` DOUBLE NULL DEFAULT NULL,
-	`dt_utc` DATETIME NULL DEFAULT NULL,
-	`pressure_mbar` DOUBLE NULL DEFAULT NULL,
-	`temp_f` DOUBLE NULL DEFAULT NULL,
-	`dewpoint_f` DOUBLE NULL DEFAULT NULL,
-	`humid_perc` DOUBLE NULL DEFAULT NULL,
-	`windsp_mph` DOUBLE NULL DEFAULT NULL,
-	`windir_deg` DOUBLE NULL DEFAULT NULL,
-	`a_press_mbar` DOUBLE NULL DEFAULT NULL,
-	`a_temp_f` DOUBLE NULL DEFAULT NULL,
-	`a_dewp_f` DOUBLE NULL DEFAULT NULL,
-	`a_humid_perc` DOUBLE NULL DEFAULT NULL,
-	`a_windsp_mph` DOUBLE NULL DEFAULT NULL,
-	`a_windir_deg` DOUBLE NULL DEFAULT NULL,
-	`ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-	PRIMARY KEY (`id`)
-)
-COMMENT='The table for raw E1248 data'
-COLLATE='utf8_general_ci'
-ENGINE=InnoDB
-CHECKSUM=1
-;
-
-
 https://mariadb.com/kb/en/library/load-data-infile/
 
 LOAD DATA LOW_PRIORITY LOCAL INFILE 
@@ -53,13 +27,6 @@ FROM
 https://stackoverflow.com/questions/8163079/importing-a-csv-to-mysql-with-different-date-format
 
 
-LOAD DATA LOW_PRIORITY LOCAL INFILE 
-'C:\\Users\\jzastrow\\Documents\\GitHub\\weather\\testtxt.csv' 
-INTO TABLE datetest
-FIELDS TERMINATED BY ','
-LINES TERMINATED BY '\n'
-( @date_time_variable) -- read one of the field to variable
-SET date_time_column = STR_TO_DATE(@date_time_variable, '%d-%b-%Y'); -- format this date-time variable
 
 
 2018-11-28 20:18:00
@@ -67,34 +34,32 @@ SET date_time_column = STR_TO_DATE(@date_time_variable, '%d-%b-%Y'); -- format t
 SELECT DATE_FORMAT('2009-10-04 22:23:00', '%Y-%m-%d');
 
 
-CREATE TABLE `datetest` (
-	`id` INT(11) auto_increment,
-	`dt_utc` DATETIME NULL DEFAULT NULL,
-	PRIMARY KEY (`id`)
-)
-COMMENT='The table for raw E1248 data'
-COLLATE='utf8_general_ci'
-ENGINE=InnoDB
-CHECKSUM=1
-;
-
-LOAD DATA LOW_PRIORITY 
-LOCAL INFILE 'C:\\Users\\jzastrow\\Documents\\GitHub\\weather\\E1248_20181226_151309.csv' 
-IGNORE 
-INTO TABLE `weather`.`datetest` 
-FIELDS TERMINATED BY ',' 
-LINES TERMINATED BY '\n' 
-IGNORE 1 LINES (@ColVar0, `dt_utc`) 
-SET `dt_utc` = REPLACE(REPLACE(@ColVar0, ',', ''), '.', '.');
-/* 1 rows imported in 0.078 seconds. */
-SHOW WARNINGS;
-
 LOAD DATA LOCAL 
-INFILE 'C:\\Users\\jzastrow\\Documents\\GitHub\\weather\\testtxt.csv' 
-INTO TABLE `weather`.`datetest` 
-CHARACTER SET 'utf8' 
-FIELDS ESCAPED BY '\\' 
-TERMINATED BY ',' 
+INFILE 'C:\\Users\\jzastrow\\Documents\\GitHub\\weather\\E1248_20181226_151309.csv' 
+INTO TABLE `weather`.`table_e1248` 
+-- FIELDS ESCAPED BY '\\' 
+FIELDS TERMINATED BY ',' 
 OPTIONALLY ENCLOSED BY '"' 
 LINES TERMINATED BY '\n' 
-IGNORE 1 LINES (`dt_utc`); 
+IGNORE 1 LINES (`dt_utc`,`pressure_mbar`,`pressure_mbar`,`temp_f`,`dewpoint_f`,`humid_perc`,`windsp_mph`,`windir_deg`,`a_press_mbar`,`a_temp_f`,`a_dewp_f`,`a_humid_perc`,`a_windsp_mph`,`a_windir_deg`
+); 
+
+
+CREATE TABLE `table_e1248` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dt_utc` datetime DEFAULT NULL,
+  `pressure_mbar` double DEFAULT NULL,
+  `temp_f` double DEFAULT NULL,
+  `dewpoint_f` double DEFAULT NULL,
+  `humid_perc` double DEFAULT NULL,
+  `windsp_mph` double DEFAULT NULL,
+  `windir_deg` double DEFAULT NULL,
+  `a_press_mbar` double DEFAULT NULL,
+  `a_temp_f` double DEFAULT NULL,
+  `a_dewp_f` double DEFAULT NULL,
+  `a_humid_perc` double DEFAULT NULL,
+  `a_windsp_mph` double DEFAULT NULL,
+  `a_windir_deg` double DEFAULT NULL,
+  `ts` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8192 DEFAULT CHARSET=utf8 CHECKSUM=1 COMMENT='The table for raw E1248 data'

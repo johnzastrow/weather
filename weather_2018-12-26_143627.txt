@@ -1,6 +1,0 @@
-Date:  20181226_143627
-Day:  Wed
-Computer:  JZASTROW-LPTP10
-Directory: /cygdrive/c/Users/jzastrow/Documents/github/weather
-**********************************
-
