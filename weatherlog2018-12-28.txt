@@ -256,3 +256,43 @@ Saving to: ‘E1248.csv’
 
 2018-12-28 12:21:55 (942 KB/s) - ‘E1248.csv’ saved [583422]
 
+Date:  20181228_140040
+Day:  Fri
+Computer:  ubuntu
+Directory: /home/jcz/Documents/github/weather
+**********************************
+
+--2018-12-28 14:00:40--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E1248
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘E1248.csv’
+
+     0K .......... .......... .......... .......... ..........  626K
+    50K .......... .......... .......... .......... .......... 1.18M
+   100K .......... .......... .......... .......... .......... 1.18M
+   150K .......... .......... .......... .......... ..........  868K
+   200K .......... .......... .......... .......... .......... 1.53M
+   250K .......... .......... .......... .......... ..........  936K
+   300K .......... .......... .......... .......... .......... 1.48M
+   350K .......... .......... .......... .......... ..........  881K
+   400K .......... .......... .......... .......... ..........  949K
+   450K .......... .......... .......... .......... .......... 2.17M
+   500K .......... .......... .......... .......... .......... 2.66M
+   550K .......... .........                                   1.34M=0.5s
+
+2018-12-28 14:00:41 (1.11 MB/s) - ‘E1248.csv’ saved [583195]
+
+--2018-12-28 14:00:41--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=KPWM
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘KPWM.csv’
+
+     0K .......... .......... .......... .......... ..........  633K
+    50K .......                                                46.9M=0.08s
+
+2018-12-28 14:00:41 (725 KB/s) - ‘KPWM.csv’ saved [58753]
+

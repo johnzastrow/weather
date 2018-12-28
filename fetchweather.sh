@@ -14,8 +14,10 @@
 	namer=$(whoami)
 	hoster=$(hostname)
 	directory=$(pwd)
+	site1="E1248"
 	weather1="E1248.csv"
 	weather1b="E1248_"$dater".csv"
+	site2="KPWM"
 	weather2="KPWM.csv"
 	weather2b="KPWM_"$dater".csv"
 	weather3="E4229.csv"
@@ -31,37 +33,26 @@ echo "Directory: "$directory >> $outputter
 echo "**********************************" >> $outputter
 echo "" >> $outputter
 
-###### Weather 1 ######
-echo "Starting Weather 1"
-echo "Starting $weather1"
-wget -v -O $weather1 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E1248&days=56&html=1
-echo "waiting to be done"
-wait
-echo "Copying datafile"
-cp $weather1 $weather1b
-echo "Completing $weather1"
-echo ""
-echo ""
-echo "calling mysql"
- mysql -uroot -pyub.miha weather < loader.sql
- echo "done loading"
- echo "------------------- Ending Weather1 ---------------"
- ###### ENDING Weather 1 ######
- 
 
- ###### Weather 1 ######
-echo "Starting Weather 1"
+echo "Starting Weather download"
 echo "Starting $weather1"
-wget -v -O $weather1 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E1248&days=56&html=1
+wget -v -O $weather1 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E1248&days=56&csv=1
 echo "waiting to be done"
 wait
 echo "Copying datafile"
 cp $weather1 $weather1b
 echo "Completing $weather1"
 echo ""
+echo "Starting $weather2"
+wget -v -O $weather2 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=$site2&days=56&csv=1
+echo "waiting to be done"
+wait
+echo "Copying datafile"
+cp $weather2 $weather2b
+echo "Completing $weather2"
 echo ""
 echo "calling mysql"
  mysql -uroot -pyub.miha weather < loader.sql
  echo "done loading"
  echo "------------------- Ending Weather1 ---------------"
- ###### ENDING Weather 1 ######
+ ###### ENDING Weather ######
