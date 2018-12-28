@@ -36,8 +36,8 @@ SELECT DATE_FORMAT('2009-10-04 22:23:00', '%Y-%m-%d');
 
 LOAD DATA LOCAL 
 INFILE 'C:\\Users\\jzastrow\\Documents\\GitHub\\weather\\E1248_20181226_151309.csv' 
-INTO TABLE `weather`.`table_e1248` 
--- FIELDS ESCAPED BY '\\' 
+IGNORE INTO TABLE `weather`.`table_e1248` 
+-- ignore lets the import skip dupes rows 
 FIELDS TERMINATED BY ',' 
 OPTIONALLY ENCLOSED BY '"' 
 LINES TERMINATED BY '\n' 
