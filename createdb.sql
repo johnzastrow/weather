@@ -22,7 +22,6 @@ CREATE TABLE `E1248` (
 COMMENT='The table for raw E1248 data';
 
 
-
 CREATE TABLE `KPWM` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `dt_utc` datetime DEFAULT NULL,
