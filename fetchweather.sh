@@ -32,8 +32,13 @@ echo "Computer: " $hoster >> $outputter
 echo "Directory: "$directory >> $outputter
 echo "**********************************" >> $outputter
 echo "" >> $outputter
+echo "There are this many records in database to start"
+./stats.sh
+echo ""
+echo ""
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 
-
+mysql -uroot -pyub.miha weather < initial.sql
 echo "Starting Weather download"
 echo "Starting $weather1"
 wget -v -O $weather1 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E1248&days=56&csv=1
@@ -54,5 +59,9 @@ echo ""
 echo "calling mysql"
  mysql -uroot -pyub.miha weather < loader.sql
  echo "done loading"
- echo "------------------- Ending Weather1 ---------------"
- ###### ENDING Weather ######
+
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo ""
+echo ""
+echo "There are this many records in database after loading"
+./stats.sh

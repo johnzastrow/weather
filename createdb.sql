@@ -15,24 +15,7 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`weather` /*!40100 DEFAULT CHARACTER SET
 
 USE `weather`;
 
-/*Table structure for table `datetest` */
-
-CREATE TABLE `datetest` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dt_utc` datetime DEFAULT NULL,
-  `pressure_mbar` double DEFAULT NULL,
-  `ts` timestamp NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8192 DEFAULT CHARSET=utf8;
-
-
-
-/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
-/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
-/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
-
+/*Table structure for table `E1248` */
 
 CREATE TABLE `E1248` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -55,6 +38,7 @@ CREATE TABLE `E1248` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8192 DEFAULT CHARSET=utf8 CHECKSUM=1 
 COMMENT='The table for raw E1248 data';
 
+/*Table structure for table `KPWM` */
 
 CREATE TABLE `KPWM` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -75,4 +59,9 @@ CREATE TABLE `KPWM` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uniq_dt` (`dt_utc`) COMMENT 'Keeps dupe data out'
 ) ENGINE=InnoDB AUTO_INCREMENT=8192 DEFAULT CHARSET=utf8 CHECKSUM=1 
-COMMENT='The table for raw KPWM data';
+COMMENT='The table for raw KPWM data';8;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;

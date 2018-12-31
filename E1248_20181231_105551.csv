@@ -1,4 +1,5 @@
 "Time (UTC)","Barometric Pressure (mbar)","Temperature (degrees F)","Dewpoint (degrees F)","Relative Humidity (%)","Wind speed (mph)","Wind direction (degrees)","Analysis Barometric Pressure (mbar)","Analysis Temperature (degrees F)","Analysis Dewpoint (degrees F)","Analysis Relative Humidity (%)","Analysis Wind speed (mph)","Analysis Wind direction (degrees)"
+2018-12-03 18:58:00,995.60,51.0,38.9,62,6,280,995.49,47.8,40.2,74,2.2,300
 2018-12-03 19:03:00,995.70,51.0,39.3,64,3,267,995.49,47.8,40.2,74,2.2,300
 2018-12-03 19:08:00,995.90,51.0,39.3,64,3,297,995.49,47.8,40.2,74,2.2,300
 2018-12-03 19:13:00,995.90,50.0,38.7,64,1,288,995.49,47.8,40.2,74,2.2,300
