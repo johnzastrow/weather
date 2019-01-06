@@ -9,12 +9,14 @@
 # date format is currently YYYYMMDD_HHMMSS
 	outputter=weatherlog$(date +%Y-%m-%d).txt
 	dater=$(date +%Y%m%d_%H%M%S)
-	dater=$(date +%Y%m%d_%H%M%S)
 	dayer=$(date +%a)
 	namer=$(whoami)
 	hoster=$(hostname)
 	directory=$(pwd)
-	
+	output="/home/jcz/Documents/github/weather/"
+	outputter=$output"weatherlog$(date +%Y-%m-%d).txt"
+
+
 	site1="E1248"
 	weather1="E1248.csv"
 	weather1b="E1248_"$dater".csv"
@@ -37,50 +39,57 @@ echo "Computer: " $hoster >> $outputter
 echo "Directory: "$directory >> $outputter
 echo "**********************************" >> $outputter
 echo "" >> $outputter
-echo "There are this many records in database to start"
-./stats.sh
-echo ""
-echo ""
-echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+echo "There are this many records in database to start"  >> $outputter
+./stats.sh  >> $outputter
+echo ""  >> $outputter
+echo ""  >> $outputter
+echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"  >> $outputter
+echo $outputter
+echo $output$weather2
 
-echo "Starting Weather download"
+echo "Starting Weather download" 
 echo "Starting $weather1"
-wget -v -O $weather1 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=$site1&days=56&csv=1
+wget -v -O $output$weather1 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=$site1&days=56&csv=1
 echo "waiting to be done " $weather1
 wait
+cp -v $weather1 $weather1b
 
 echo "Completing $weather1"
 echo ""
 echo "Starting $weather2"
-wget -v -O $weather2 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=$site2&days=56&csv=1
+wget -v -O $output$weather2 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=$site2&days=56&csv=1
 echo "waiting to be done " $weather2
 wait
-
+cp -v $weather2 $weather2b
 echo "Completing $weather2"
 
 echo "Starting $weather3"
-wget -v -O $weather3 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=$site3&days=56&csv=1
+wget -v -O $output$weather3 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=$site3&days=56&csv=1
 echo "waiting to be done " $weather3
 wait
-
+cp -v $weather3 $weather3b
 echo "Completing $weather3"
 
 
 echo "Starting $weather4"
-wget -v -O $weather4 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=$site4&days=56&csv=1
+wget -v -O $output$weather4 -a $outputter https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=$site4&days=56&csv=1
 echo "waiting to be done " $weather4
 wait
-
+cp -v $weather4 $weather4b
 echo "Completing $weather4"
 
 
-echo ""
+echo ""  >> $outputter
 echo "calling mysql"
- mysql -uroot -pyub.miha weather < loader.sql
+ mysql -uroot -pyub.miha weather < loader.sql  >> $outputter
  echo "done loading"
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
 echo ""
 echo ""
 echo "There are this many records in database after loading"
-./stats.sh
+./stats.sh   >> $outputter
+echo " *************** END *********************** "  >> $outputter
+echo ""  >> $outputter
+echo ""  >> $outputter
+echo " ------------------------------------------------- "  >> $outputter
