@@ -466,3 +466,462 @@ Saving to: ‘/home/jcz/Documents/github/weather/E4279.csv’
 
 
  ------------------------------------------------- 
+Date:  20190105_211701
+Day:  Sat
+Computer:  raspberrypi
+Directory: /
+**********************************
+
+There are this many records in database to start
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--2019-01-05 21:17:01--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E1248
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E1248.csv’
+
+     0K .......... .......... .......... .......... ..........  313K
+    50K .......... .......... .......... .......... ..........  505K
+   100K .......... .......... .......... .......... ..........  505K
+   150K .......... .......... .......... .......... ..........  514K
+   200K .......... .......... .......... .......... ..........  930K
+   250K .......... .......... .......... .......... ..........  514K
+   300K .......... .......... .......... .......... ..........  966K
+   350K .......... .......... .......... .......... ..........  935K
+   400K .......... .......... .......... .......... ..........  522K
+   450K .......... .......... .......... .......... ..........  903K
+   500K .......... .......... .......... .......... ..........  949K
+   550K .......... .......                                     6.36M=0.9s
+
+2019-01-05 21:17:04 (618 KB/s) - ‘/home/jcz/Documents/github/weather/E1248.csv’ saved [580978]
+
+--2019-01-05 21:17:04--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=KPWM
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/KPWM.csv’
+
+     0K .......... .......... .......... .......... ..........  338K
+    50K ........                                               2.96M=0.2s
+
+2019-01-05 21:17:05 (388 KB/s) - ‘/home/jcz/Documents/github/weather/KPWM.csv’ saved [59775]
+
+--2019-01-05 21:17:05--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E4229
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E4229.csv’
+
+     0K .......... .......... .......... .......... ..........  305K
+    50K .......... .......... .......... .......... ..........  475K
+   100K .......... .......... .......... .......... ..........  844K
+   150K .......... .......... .......... ..........             412K=0.4s
+
+2019-01-05 21:17:06 (447 KB/s) - ‘/home/jcz/Documents/github/weather/E4229.csv’ saved [194979]
+
+--2019-01-05 21:17:06--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E4279
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E4279.csv’
+
+     0K .......... .......... .......... .......... ..........  293K
+    50K .......... .......... .......... .......... ..........  491K
+   100K .......... .......... .......... .......... ..........  500K
+   150K .......... .......... .......... .......... ..          829K=0.4s
+
+2019-01-05 21:17:08 (454 KB/s) - ‘/home/jcz/Documents/github/weather/E4279.csv’ saved [197069]
+
+
+ *************** END *********************** 
+
+
+Date:  20190105_212101
+Day:  Sat
+Computer:  raspberrypi
+Directory: /home/jcz
+**********************************
+
+There are this many records in database to start
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--2019-01-05 21:21:01--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E1248
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E1248.csv’
+
+     0K .......... .......... .......... .......... ..........  351K
+    50K .......... .......... .......... .......... ..........  537K
+   100K .......... .......... .......... .......... ..........  520K
+   150K .......... .......... .......... .......... ..........  988K
+   200K .......... .......... .......... .......... ..........  527K
+   250K .......... .......... .......... .......... ..........  968K
+   300K .......... .......... .......... .......... ..........  499K
+   350K .......... .......... .......... .......... ..........  985K
+   400K .......... .......... .......... .......... .......... 1.04M
+   450K .......... .......... .......... .......... .......... 1.02M
+   500K .......... .......... .......... .......... ..........  977K
+   550K .......... .......                                      531K=0.9s
+
+2019-01-05 21:21:03 (661 KB/s) - ‘/home/jcz/Documents/github/weather/E1248.csv’ saved [580906]
+
+--2019-01-05 21:21:03--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=KPWM
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/KPWM.csv’
+
+     0K .......... .......... .......... .......... ..........  337K
+    50K ........                                                185K=0.2s
+
+2019-01-05 21:21:03 (301 KB/s) - ‘/home/jcz/Documents/github/weather/KPWM.csv’ saved [59775]
+
+--2019-01-05 21:21:03--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E4229
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E4229.csv’
+
+     0K .......... .......... .......... .......... ..........  259K
+    50K .......... .......... .......... .......... ..........  546K
+   100K .......... .......... .......... .......... ..........  594K
+   150K .......... .......... .......... ..........             896K=0.4s
+
+2019-01-05 21:21:04 (460 KB/s) - ‘/home/jcz/Documents/github/weather/E4229.csv’ saved [194979]
+
+--2019-01-05 21:21:04--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E4279
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E4279.csv’
+
+     0K .......... .......... .......... .......... ..........  331K
+    50K .......... .......... .......... .......... ..........  485K
+   100K .......... .......... .......... .......... ..........  530K
+   150K .......... .......... .......... .......... ..          829K=0.4s
+
+2019-01-05 21:21:05 (482 KB/s) - ‘/home/jcz/Documents/github/weather/E4279.csv’ saved [197069]
+
+
+ *************** END *********************** 
+
+
+ ------------------------------------------------- 
+Date:  20190105_221702
+Day:  Sat
+Computer:  raspberrypi
+Directory: /
+**********************************
+
+There are this many records in database to start
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--2019-01-05 22:17:02--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E1248
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E1248.csv’
+
+     0K .......... .......... .......... .......... ..........  328K
+    50K .......... .......... .......... .......... ..........  471K
+   100K .......... .......... .......... .......... ..........  505K
+   150K .......... .......... .......... .......... ..........  503K
+   200K .......... .......... .......... .......... ..........  953K
+   250K .......... .......... .......... .......... ..........  524K
+   300K .......... .......... .......... .......... ..........  951K
+   350K .......... .......... .......... .......... ..........  911K
+   400K .......... .......... .......... .......... .......... 1003K
+   450K .......... .......... .......... .......... ..........  915K
+   500K .......... .......... .......... .......... ..........  507K
+   550K .......... .......                                     7.68M=0.9s
+
+2019-01-05 22:17:03 (618 KB/s) - ‘/home/jcz/Documents/github/weather/E1248.csv’ saved [581020]
+
+--2019-01-05 22:17:03--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=KPWM
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/KPWM.csv’
+
+     0K .......... .......... .......... .......... ..........  301K
+    50K ........                                                153K=0.2s
+
+2019-01-05 22:17:04 (264 KB/s) - ‘/home/jcz/Documents/github/weather/KPWM.csv’ saved [59852]
+
+--2019-01-05 22:17:04--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E4229
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E4229.csv’
+
+     0K .......... .......... .......... .......... ..........  301K
+    50K .......... .......... .......... .......... ..........  523K
+   100K .......... .......... .......... .......... ..........  478K
+   150K .......... .......... .......... ..........             799K=0.4s
+
+2019-01-05 22:17:05 (457 KB/s) - ‘/home/jcz/Documents/github/weather/E4229.csv’ saved [194985]
+
+--2019-01-05 22:17:05--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E4279
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E4279.csv’
+
+     0K .......... .......... .......... .......... ..........  305K
+    50K .......... .......... .......... .......... ..........  695K
+   100K .......... .......... .......... .......... ..........  515K
+   150K .......... .......... .......... .......... ..          790K=0.4s
+
+2019-01-05 22:17:12 (498 KB/s) - ‘/home/jcz/Documents/github/weather/E4279.csv’ saved [197133]
+
+
+ *************** END *********************** 
+
+
+Date:  20190105_222101
+Day:  Sat
+Computer:  raspberrypi
+Directory: /home/jcz
+**********************************
+
+There are this many records in database to start
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--2019-01-05 22:21:01--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E1248
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E1248.csv’
+
+     0K .......... .......... .......... .......... ..........  344K
+    50K .......... .......... .......... .......... ..........  516K
+   100K .......... .......... .......... .......... ..........  498K
+   150K .......... .......... .......... .......... ..........  571K
+   200K .......... .......... .......... .......... .......... 1021K
+   250K .......... .......... .......... .......... ..........  483K
+   300K .......... .......... .......... .......... ..........  995K
+   350K .......... .......... .......... .......... ..........  968K
+   400K .......... .......... .......... .......... ..........  551K
+   450K .......... .......... .......... .......... ..........  856K
+   500K .......... .......... .......... .......... ..........  938K
+   550K .......... .......                                     7.35M=0.9s
+
+2019-01-05 22:21:03 (638 KB/s) - ‘/home/jcz/Documents/github/weather/E1248.csv’ saved [580949]
+
+--2019-01-05 22:21:03--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=KPWM
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/KPWM.csv’
+
+     0K .......... .......... .......... .......... ..........  306K
+    50K ........                                               7.47M=0.2s
+
+2019-01-05 22:21:04 (355 KB/s) - ‘/home/jcz/Documents/github/weather/KPWM.csv’ saved [59852]
+
+--2019-01-05 22:21:04--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E4229
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E4229.csv’
+
+     0K .......... .......... .......... .......... ..........  325K
+    50K .......... .......... .......... .......... ..........  510K
+   100K .......... .......... .......... .......... ..........  527K
+   150K .......... .......... .......... ..........             801K=0.4s
+
+2019-01-05 22:21:11 (479 KB/s) - ‘/home/jcz/Documents/github/weather/E4229.csv’ saved [194985]
+
+--2019-01-05 22:21:11--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E4279
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E4279.csv’
+
+     0K .......... .......... .......... .......... ..........  318K
+    50K .......... .......... .......... .......... ..........  363K
+   100K .......... .......... .......... .......... ..........  897K
+   150K .......... .......... .......... .......... ..          797K=0.4s
+
+2019-01-05 22:21:12 (476 KB/s) - ‘/home/jcz/Documents/github/weather/E4279.csv’ saved [197133]
+
+
+ *************** END *********************** 
+
+
+ ------------------------------------------------- 
+Date:  20190105_231701
+Day:  Sat
+Computer:  raspberrypi
+Directory: /
+**********************************
+
+There are this many records in database to start
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--2019-01-05 23:17:01--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E1248
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E1248.csv’
+
+     0K .......... .......... .......... .......... ..........  283K
+    50K .......... .......... .......... .......... ..........  365K
+   100K .......... .......... .......... .......... ..........  991K
+   150K .......... .......... .......... .......... ..........  518K
+   200K .......... .......... .......... .......... .......... 1020K
+   250K .......... .......... .......... .......... ..........  549K
+   300K .......... .......... .......... .......... .......... 1004K
+   350K .......... .......... .......... .......... .......... 1018K
+   400K .......... .......... .......... .......... ..........  934K
+   450K .......... .......... .......... .......... ..........  720K
+   500K .......... .......... .......... .......... ..........  887K
+   550K .......... .......                                     5.89M=0.9s
+
+2019-01-05 23:17:02 (643 KB/s) - ‘/home/jcz/Documents/github/weather/E1248.csv’ saved [581055]
+
+--2019-01-05 23:17:02--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=KPWM
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/KPWM.csv’
+
+     0K .......... .......... .......... .......... ..........  336K
+    50K ........                                               5.85M=0.2s
+
+2019-01-05 23:17:04 (390 KB/s) - ‘/home/jcz/Documents/github/weather/KPWM.csv’ saved [59844]
+
+--2019-01-05 23:17:04--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E4229
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E4229.csv’
+
+     0K .......... .......... .......... .......... ..........  239K
+    50K .......... .......... .......... .......... ..........  533K
+   100K .......... .......... .......... .......... ..........  945K
+   150K .......... .......... .......... ..........             421K=0.5s
+
+2019-01-05 23:17:05 (422 KB/s) - ‘/home/jcz/Documents/github/weather/E4229.csv’ saved [194873]
+
+--2019-01-05 23:17:05--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E4279
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E4279.csv’
+
+     0K .......... .......... .......... .......... ..........  299K
+    50K .......... .......... .......... .......... ..........  585K
+   100K .......... .......... .......... .......... ..........  567K
+   150K .......... .......... .......... .......... ..          885K=0.4s
+
+2019-01-05 23:17:06 (495 KB/s) - ‘/home/jcz/Documents/github/weather/E4279.csv’ saved [197094]
+
+
+ *************** END *********************** 
+
+
+Date:  20190105_232101
+Day:  Sat
+Computer:  raspberrypi
+Directory: /home/jcz
+**********************************
+
+There are this many records in database to start
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+--2019-01-05 23:21:01--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E1248
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E1248.csv’
+
+     0K .......... .......... .......... .......... ..........  472K
+    50K .......... .......... .......... .......... ..........  342K
+   100K .......... .......... .......... .......... ..........  665K
+   150K .......... .......... .......... .......... ..........  574K
+   200K .......... .......... .......... .......... .......... 1006K
+   250K .......... .......... .......... .......... .......... 1008K
+   300K .......... .......... .......... .......... ..........  613K
+   350K .......... .......... .......... .......... .......... 1.04M
+   400K .......... .......... .......... .......... .......... 1.06M
+   450K .......... .......... .......... .......... .......... 1.02M
+   500K .......... .......... .......... .......... ..........  823K
+   550K .......... .......                                      693K=0.8s
+
+2019-01-05 23:21:02 (690 KB/s) - ‘/home/jcz/Documents/github/weather/E1248.csv’ saved [580984]
+
+--2019-01-05 23:21:02--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=KPWM
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/KPWM.csv’
+
+     0K .......... .......... .......... .......... ..........  326K
+    50K ........                                                141K=0.2s
+
+2019-01-05 23:21:03 (274 KB/s) - ‘/home/jcz/Documents/github/weather/KPWM.csv’ saved [59844]
+
+--2019-01-05 23:21:03--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E4229
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E4229.csv’
+
+     0K .......... .......... .......... .......... ..........  338K
+    50K .......... .......... .......... .......... ..........  495K
+   100K .......... .......... .......... .......... ..........  471K
+   150K .......... .......... .......... ..........             777K=0.4s
+
+2019-01-05 23:21:04 (468 KB/s) - ‘/home/jcz/Documents/github/weather/E4229.csv’ saved [194873]
+
+--2019-01-05 23:21:04--  https://weather.gladstonefamily.net/cgi-bin/wxobservations.pl?site=E4279
+Resolving weather.gladstonefamily.net (weather.gladstonefamily.net)... 140.177.205.131
+Connecting to weather.gladstonefamily.net (weather.gladstonefamily.net)|140.177.205.131|:443... connected.
+HTTP request sent, awaiting response... 200 OK
+Length: unspecified [text/plain]
+Saving to: ‘/home/jcz/Documents/github/weather/E4279.csv’
+
+     0K .......... .......... .......... .......... ..........  338K
+    50K .......... .......... .......... .......... ..........  513K
+   100K .......... .......... .......... .......... ..........  544K
+   150K .......... .......... .......... .......... ..          786K=0.4s
+
+2019-01-05 23:21:05 (492 KB/s) - ‘/home/jcz/Documents/github/weather/E4279.csv’ saved [197094]
+
+
+ *************** END *********************** 
+
+
+ ------------------------------------------------- 
