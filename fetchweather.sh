@@ -20,24 +20,24 @@
 
 	site1="E1248"
 	weather1="E1248.csv"
-	weather1b=$output"E1248_"$dater".csv"
+	weather1b=$output"E1248_$dater.csv"
 	
 	site2="KPWM"
 	weather2="KPWM.csv"
-	weather2b=$output"KPWM_"$dater".csv"
+	weather2b=$output"KPWM_$dater.csv"
 	
 	site3="E4229"
 	weather3="E4229.csv"
-	weather3b=$output"E4229_"$dater".csv"
+	weather3b=$output"E4229_$dater.csv"
 	
 	site4="E4279"
 	weather4="E4279.csv"
-	weather4b=$output"E4279_"$dater".csv"
+	weather4b=$output"E4279_$dater.csv"
 
 echo " ************************************* " >> $outputter
 echo "Date: " $longdate >> $outputter
 echo "Day: " $dayer >> $outputter
-echo "Whoami: '$namer >> $outputter
+echo "Whoami: " $namer >> $outputter
 echo "Computer: " $hoster >> $outputter
 echo "Directory: "$directory >> $outputter
 echo "**********************************" >> $outputter
@@ -57,7 +57,7 @@ wget -v -O $output$weather1 -a $outputter https://weather.gladstonefamily.net/cg
 echo "waiting to be done " $weather1
 wait
 cp -v $weather1 $weather1b >> $outputter
-
+echo "copying to $weather1b"
 
 echo "Completing $weather1"
 echo ""
