@@ -66,3 +66,60 @@ CREATE TABLE `table_e1248` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `uniq_dt` (`dt_utc`) COMMENT 'Keeps dupe data out'
 ) ENGINE=InnoDB AUTO_INCREMENT=8192 DEFAULT CHARSET=utf8 CHECKSUM=1 COMMENT='The table for raw E1248 data'
+
+
+
+	CREATE TABLE `e1248_daily` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `d_utc` date DEFAULT NULL,
+  `temp_f_dayavg` double DEFAULT NULL,
+   `temp_f_daymin` double DEFAULT NULL,
+    `temp_f_daymax` double DEFAULT NULL,
+  `windsp_mph_dayavg` double DEFAULT NULL,
+  `ts` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uniq_d` (`d_utc`) COMMENT 'Keeps dupe data out'
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 CHECKSUM=1 COMMENT='The table for raw E1248 data'
+
+	
+
+  
+CREATE TABLE `e1248_daily` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `d_utc` date DEFAULT NULL,
+  `temp_f_davg` double DEFAULT NULL,
+  `temp_f_dmin` double DEFAULT NULL,
+  `temp_f_dmax` double DEFAULT NULL,
+  `windsp_mph_davg` double DEFAULT NULL,
+  `ts` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uniq_d` (`d_utc`) COMMENT 'Keeps dupe data out'
+) ENGINE=InnoDB AUTO_INCREMENT=256 DEFAULT CHARSET=utf8 CHECKSUM=1 COMMENT='The table for raw E1248 daily agg data'
+
+
+
+
+-- WORKS!
+ INSERT INTO e1248_daily (
+  d_utc,
+  temp_f_davg,
+  temp_f_dmin,
+  temp_f_dmax,
+  windsp_mph_davg
+)
+  SELECT
+    d_utc,
+    temp_f_davg,
+    temp_f_dmin,
+    temp_f_dmax,
+    windsp_mph_davg
+  FROM
+    (SELECT
+      DATE(dt_utc) AS d_utc,
+      AVG(temp_f) AS temp_f_davg,
+      MIN(temp_f) AS temp_f_dmin,
+      MAX(temp_f) AS temp_f_dmax,
+      AVG(windsp_mph) AS windsp_mph_davg
+    FROM
+      e1248
+    GROUP BY DATE(dt_utc)) temp1;
