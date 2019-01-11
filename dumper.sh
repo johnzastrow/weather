@@ -1,7 +1,19 @@
 #!/bin/bash
-for table in $(mysql -uroot -pyub.miha -D weather -Bse "show tables");
-do 
-    echo "------"
-    echo $table ": " 
-    mysql -uroot -pyub.miha -D weather -se "select count(*) from $table";
-done
+
+# jcz  6-jan-19
+#  dumps mysql database to dated file
+##################################
+
+# set vx
+# Date and other variables pretty self explanatory, S is seconds
+# date format is currently YYYYMMDD_HHMMSS
+        outputter=weatlog$(date +%Y-%m-%d).txt
+        dater=$(date +%Y%m%d_%H%M%S)
+        dayer=$(date +%a)
+        longdate=$(date)
+        namer=$(whoami)
+        hoster=$(hostname)
+        directory=$(pwd)
+
+source my.config
+mysqldump $dbconnect -opt weather > $dater_weatherdump.sql
