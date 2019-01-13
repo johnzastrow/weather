@@ -7,6 +7,8 @@
 # set vx
 # Date and other variables pretty self explanatory, S is seconds
 # date format is currently YYYYMMDD_HHMMSS
+
+cd /home/jcz/Documents/github/weather
 	outputter=weatherlog$(date +%Y-%m-%d).txt
 	dater=$(date +%Y%m%d_%H%M%S)
 	dayer=$(date +%a)
@@ -33,7 +35,9 @@
 	site4="E4279"
 	weather4="E4279.csv"
 	weather4b=$output"E4279_$dater.csv"
-
+source my.config
+cd $output
+echo $directory
 echo " ************************************* " >> $outputter
 echo "Date: " $longdate >> $outputter
 echo "Day: " $dayer >> $outputter
@@ -43,6 +47,7 @@ echo "Directory: "$directory >> $outputter
 echo "**********************************" >> $outputter
 echo "" >> $outputter
 echo "There are this many records in database to start" >> $outputter
+echo $dbconnect
 ./stats.sh  >> $outputter
 echo "" >> $outputter
 echo "" >> $outputter
@@ -88,7 +93,7 @@ echo "Completing $weather4"
 
 echo ""  >> $outputter
 echo "calling mysql"
- mysql -uroot -pyub.miha weather < loader.sql  >> $outputter
+ mysql $dbconnect  weather < loader.sql  >> $outputter
  echo "done loading" >> $outputter
 
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"  >> $outputter
