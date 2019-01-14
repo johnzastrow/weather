@@ -16,16 +16,6 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`weather` /*!40100 DEFAULT CHARACTER SET
 
 USE `weather`;
 
-/*Table structure for table `datetest` */
-
-CREATE TABLE `datetest` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dt_utc` datetime DEFAULT NULL,
-  `pressure_mbar` double DEFAULT NULL,
-  `ts` timestamp NULL DEFAULT current_timestamp(),
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=7882 DEFAULT CHARSET=utf8;
-
 /*Table structure for table `e1248` */
 
 CREATE TABLE `e1248` (

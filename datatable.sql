@@ -118,3 +118,59 @@ INSERT INTO e1248_daily (
     FROM
       e1248
     GROUP BY DATE(dt_utc)) temp1;
+
+
+    DROP TABLE `weather`.`e1248_daily`; 
+
+SELECT DATE(dt_utc), MIN(temp_f) AS temp_f_dmin, AVG(temp_f) AS temp_f_davg, 65 - AVG(temp_f) AS hdd_d65, MAX(temp_f) AS temp_f_dmax, COUNT(id) AS Recs FROM e1248 GROUP BY DATE(dt_utc);
+
+ CREATE TABLE `e1248_daily` (
+`id` INT(11) NOT NULL AUTO_INCREMENT,
+`d_utc` DATE DEFAULT NULL,
+`temp_f_davg` DOUBLE DEFAULT NULL,
+	`hdd_d65` DOUBLE DEFAULT NULL,
+	`hdd_d70` DOUBLE DEFAULT NULL,
+`temp_f_dmin` DOUBLE DEFAULT NULL,
+`temp_f_dmax` DOUBLE DEFAULT NULL,
+`windsp_mph_davg` DOUBLE DEFAULT NULL,
+`ts` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP() ON UPDATE CURRENT_TIMESTAMP(),
+ PRIMARY KEY (`id`),
+  UNIQUE KEY `uniq_d` (`d_utc`) COMMENT 'Keeps dupe data out'
+ ) ENGINE=INNODB AUTO_INCREMENT=1 DEFAULT CHARSET=utf8 CHECKSUM=1 COMMENT='The table for raw E1248 data';
+
+
+
+-- WORKS!
+ INSERT INTO e1248_daily (
+  d_utc,
+  temp_f_davg,
+  hdd_d65,
+  hdd_d70,
+  temp_f_dmin,
+  temp_f_dmax,
+  windsp_mph_davg
+)
+  SELECT
+    d_utc,
+    temp_f_davg,
+    hdd_d65,
+    hdd_d70,
+    temp_f_dmin,
+    temp_f_dmax,
+    windsp_mph_davg
+  FROM
+    (SELECT
+      DATE(dt_utc) AS d_utc,
+      AVG(temp_f) AS temp_f_davg,
+      65 - AVG(temp_f) AS hdd_d65,
+      70 - AVG(temp_f) AS hdd_d70,
+      MIN(temp_f) AS temp_f_dmin,
+      MAX(temp_f) AS temp_f_dmax,
+      AVG(windsp_mph) AS windsp_mph_davg
+    FROM
+      e1248
+    GROUP BY DATE(dt_utc)) temp1;
+    
+    SELECT month_year FROM 
+    SELECT CONCAT(MONTH(d_utc),'-',YEAR((d_utc))) AS month_year, SUM(hdd_d65) AS hdd_m65,SUM(hdd_d70) AS hdd_m70, COUNT(id) AS COUNT FROM  e1248_daily
+    GROUP BY month_year temp3;
