@@ -7,7 +7,7 @@
 # set vx
 # Date and other variables pretty self explanatory, S is seconds
 # date format is currently YYYYMMDD_HHMMSS
-        outputter=weatlog$(date +%Y-%m-%d).txt
+        outputter=log$(date +%Y-%m-%d).txt
         dater=$(date +%Y%m%d_%H%M%S)
         dayer=$(date +%a)
         longdate=$(date)
