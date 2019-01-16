@@ -1,0 +1,1 @@
+SELECT UNIX_TIMESTAMP(dt_utc), temp_f  INTO OUTFILE '/tmp/input2.csv' FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' FROM `weather`.`KPWM`;

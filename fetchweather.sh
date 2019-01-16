@@ -48,7 +48,16 @@ echo "**********************************" >> $outputter
 echo "" >> $outputter
 echo "There are this many records in database to start" >> $outputter
 echo $dbconnect
-./stats.sh  >> $outputter
+
+# how many records are in the db before we insert
+
+for table in $(mysql $dbconnect -D weather -Bse "show tables");
+do 
+    echo "------" >> $outputter
+    echo $table ": " >> $outputter
+    mysql $dbconnect -D weather -se "select count(*) from $table"; >> $outputter
+done
+
 echo "" >> $outputter
 echo "" >> $outputter
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" >> $outputter
@@ -102,7 +111,15 @@ echo "" >> $outputter
 
 echo "There are this many records in database after loading" >> $outputter
 
-./stats.sh   >> $outputter
+# how many records are in the db after we insert
+
+for table in $(mysql $dbconnect -D weather -Bse "show tables");
+do 
+    echo "------" >> $outputter
+    echo $table ": " >> $outputter
+    mysql $dbconnect -D weather -se "select count(*) from $table"; >> $outputter
+done
+
 echo " *************** END *********************** "  >> $outputter
 echo ""  >> $outputter
 echo ""  >> $outputter
