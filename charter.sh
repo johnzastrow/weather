@@ -45,12 +45,13 @@ YESTERDAY=$(date +%s --date="-1 day")
 # Correct offset to 2000-01-01 00:00:00
 YESTERDAY=$(expr $YESTERDAY - $EPOCH_OFFSET)
 
-source my.config
-echo $dbconnect
-query="SELECT UNIX_TIMESTAMP(dt_utc), temp_f  INTO OUTFILE $weather1b FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' FROM $site1;"
-mysql $dbconnect --skip-column-names weather -e $query
+# source my.config
+# echo $dbconnect
+# query="SELECT UNIX_TIMESTAMP(dt_utc), temp_f  INTO OUTFILE $weather1b FIELDS TERMINATED BY ';' LINES TERMINATED BY '\n' FROM $site1;"
+# mysql $dbconnect --skip-column-names weather -e $query
 
-echo "$weather1b"
+# echo $query
+# echo "$weather1b"
 
 /usr/bin/gnuplot << EOF
 
@@ -90,7 +91,7 @@ set style line 1 \
     linetype 1 linewidth 2 \
     pointtype 7 pointsize 1.5
 unset key
-set output $outputter
-plot "$output_place$weather1b" with linespoints linestyle 1
+set output "$outputter"
+plot "/tmp/E1248.csv" with points linestyle 1
 
 EOF
