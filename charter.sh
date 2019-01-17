@@ -7,11 +7,16 @@
 # set vx
 # Date and other variables pretty self explanatory, S is seconds
 # date format is currently YYYYMMDD_HHMMSS
+
+./exporter.sh
 	
 	dater=$(date +%Y%m%d_%H%M%S)
 	dater=$(date +%Y%m%d_%H%M%S)
 	output_place="/home/jcz/Documents/github/weather/"
-    outputter=$output_placeplot$(date +%Y-%m-%d).png
+    E1248outputter=$output_placeplot"E1248"$(date +%Y-%m-%d-%S).png
+	KPWMoutputter=$output_placeplot"KPWM"$(date +%Y-%m-%d-%S).png
+	E4229outputter=$output_placeplot"E4229"$(date +%Y-%m-%d-%S).png
+	E4279outputter=$output_placeplot"E4279"$(date +%Y-%m-%d-%S).png
  
     site1="E1248"
 	weather1b=$output_place"E1248_plot$dater.csv"
@@ -68,7 +73,10 @@ set grid
 #set datafile missing "NaN"
 
 # set X-axis range to current date only
-set xrange ["$YESTERDAY":"$TODAY"]
+# SELECT UNIX_TIMESTAMP('2019-12-31 12:00:00');
+# SELECT UNIX_TIMESTAMP('2017-01-01 12:00:00');
+
+set xrange [1483300800:1577822400]
  
 # Y-axis ranges in deg F
 set yrange [-30:100]
@@ -81,17 +89,27 @@ set yrange [-30:100]
  
 # read data from file and generate plot
 
-set terminal png size 600,800 enhanced font 'arial,9'
+set terminal png size 800,600 enhanced font 'arial,8'
 set datafile separator ';'
 set xdata time
 set timefmt "%s"
 set format x "%y-%m-%d" 
 set style line 1 \
     linecolor rgb '#0060ad' \
-    linetype 1 linewidth 2 \
-    pointtype 7 pointsize 1.5
+    linetype 1 linewidth 1 \
+    pointtype 7 pointsize .6
+set style line 2 \
+    linecolor rgb '#932811' \
+    linetype 1 linewidth 1 \
+    pointtype 7 pointsize .6
 unset key
-set output "$outputter"
-plot "/tmp/E1248.csv" with points linestyle 1
+TITLE="Temperature for $site4 at $(date +%F\ %T)"
+set output "$E4279outputter"
+plot '/tmp/mysql/E4279.csv' using 1:2 with points linestyle 1
+TITLE="Temperature for $site3 at $(date +%F\ %T)"
+set output "$E4279outputter"
+plot '/tmp/mysql/E4229.csv' using 1:2 with points linestyle 2
 
 EOF
+
+rm /tmp/mysql/*.csv
