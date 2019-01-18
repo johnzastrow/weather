@@ -188,3 +188,39 @@ END;
 |
 DELIMITER ;
 CALL filldates('2015-01-01','2020-12-31');
+
+OR
+
+
+1. CREATE TABLE Days (day DATE PRIMARY KEY);
+
+2. Fill Days with all the days you're looking for.
+
+3.  mysql> INSERT INTO Days VALUES ('2011-01-01');
+    mysql> SET @offset := 1;
+    mysql> INSERT INTO Days SELECT day + INTERVAL @offset DAY FROM Days; SET @offset := @offset * 2;
+Then up-arrow and repeat the INSERT as many times as needed. It doubles the number of rows each time, so you can get four month's worth of rows in seven INSERTs.
+
+4. Do an exclusion join to find the dates for which there is no match in your reports table:
+
+    SELECT d.day FROM Days d 
+    LEFT OUTER JOIN Reports r ON d.day = DATE(r.reportdatetime) 
+    WHERE d.day BETWEEN '2011-01-01' AND '2011-04-30' 
+        AND r.reportdatetime IS NULL;`
+
+Find missing days;
+
+SELECT MIN(e1248_daily.`d_utc`), MAX(e1248_daily.`d_utc`) FROM e1248_daily;
+
+SELECT
+    `justdates`.`id`
+    , `justdates`.`dates`
+    , `e1248_daily`.`d_utc`
+FROM
+    `weather`.`e1248_daily`
+    RIGHT OUTER JOIN `weather`.`justdates` 
+        ON (`e1248_daily`.`d_utc` = `justdates`.`dates`)
+          -- inject min and max from the table below
+        WHERE dates > '2017-05-01' AND dates < '2019-01-14' AND d_utc IS NULL;
+
+
