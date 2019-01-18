@@ -174,3 +174,17 @@ SELECT DATE(dt_utc), MIN(temp_f) AS temp_f_dmin, AVG(temp_f) AS temp_f_davg, 65 
     SELECT month_year FROM 
     SELECT CONCAT(MONTH(d_utc),'-',YEAR((d_utc))) AS month_year, SUM(hdd_d65) AS hdd_m65,SUM(hdd_d70) AS hdd_m70, COUNT(id) AS COUNT FROM  e1248_daily
     GROUP BY month_year temp3;
+
+
+DROP PROCEDURE IF EXISTS filldates;
+DELIMITER |
+CREATE PROCEDURE filldates(dateStart DATE, dateEnd DATE)
+BEGIN
+  WHILE dateStart <= dateEnd DO
+    INSERT INTO justdates (dates) VALUES (dateStart);
+    SET dateStart = DATE_ADD(dateStart, INTERVAL 1 DAY);
+  END WHILE;
+END;
+|
+DELIMITER ;
+CALL filldates('2015-01-01','2020-12-31');
