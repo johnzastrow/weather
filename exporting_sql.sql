@@ -33,3 +33,4 @@ set style line 1 \
     pointtype 7 pointsize 1.5
 unset key
 plot "/tmp/input2.csv" with linespoints linestyle 1
+EOF
