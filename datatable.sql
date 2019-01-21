@@ -204,3 +204,73 @@ SELECT DATE_FORMAT('2009-10-04 22:23:00', '%Y-%m-%d');
     SELECT month_year FROM 
     SELECT CONCAT(MONTH(d_utc),'-',YEAR((d_utc))) AS month_year, SUM(hdd_d65) AS hdd_m65,SUM(hdd_d70) AS hdd_m70, COUNT(id) AS COUNT FROM  e1248_daily
     GROUP BY month_year temp3;
+
+CREATE TABLE `justdates` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dates` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2193 DEFAULT CHARSET=utf8
+
+DROP PROCEDURE IF EXISTS filldates;
+DELIMITER |
+CREATE PROCEDURE filldates(dateStart DATE, dateEnd DATE)
+BEGIN
+  WHILE dateStart <= dateEnd DO
+    INSERT INTO justdates (dates) VALUES (dateStart);
+    SET dateStart = DATE_ADD(dateStart, INTERVAL 1 DAY);
+  END WHILE;
+END;
+|
+DELIMITER ;
+CALL filldates('2015-01-01','2020-12-31');
+
+OR
+
+
+1. CREATE TABLE Days (day DATE PRIMARY KEY);
+
+2. Fill Days with all the days you're looking for.
+
+3.  mysql> INSERT INTO Days VALUES ('2011-01-01');
+    mysql> SET @offset := 1;
+    mysql> INSERT INTO Days SELECT day + INTERVAL @offset DAY FROM Days; SET @offset := @offset * 2;
+Then up-arrow and repeat the INSERT as many times as needed. It doubles the number of rows each time, so you can get four month's worth of rows in seven INSERTs.
+
+4. Do an exclusion join to find the dates for which there is no match in your reports table:
+
+    SELECT d.day FROM Days d 
+    LEFT OUTER JOIN Reports r ON d.day = DATE(r.reportdatetime) 
+    WHERE d.day BETWEEN '2011-01-01' AND '2011-04-30' 
+        AND r.reportdatetime IS NULL;`
+
+Find missing days;
+
+# gives date range to look for data
+SELECT MIN(e1248_daily.`d_utc`), MAX(e1248_daily.`d_utc`) FROM e1248_daily;
+
+
+# Shows records where data is missing
+SELECT
+    `justdates`.`id`
+    , `justdates`.`dates`
+    , `e1248_daily`.`d_utc`
+FROM
+    `weather`.`e1248_daily`
+    RIGHT OUTER JOIN `weather`.`justdates` 
+        ON (`e1248_daily`.`d_utc` = `justdates`.`dates`)
+          -- inject min and max from the table below
+        WHERE dates > '2017-05-01' AND dates < '2019-01-14' AND d_utc IS NULL;
+        
+
+# Shows all records including holes
+SELECT
+    `justdates`.`id`
+    , `justdates`.`dates`
+    , `e1248_daily`.`d_utc`
+FROM
+    `weather`.`e1248_daily`
+    RIGHT OUTER JOIN `weather`.`justdates` 
+        ON (`e1248_daily`.`d_utc` = `justdates`.`dates`)
+        WHERE dates > '2017-05-01' AND dates < '2019-01-14';
+
+

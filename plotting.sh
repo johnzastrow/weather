@@ -133,3 +133,13 @@ filename="/tmp/stats_for"$days"days.csv"
 	plot '$filename' using 1:2 smooth csplines lw 2 title 'stats of traffic', \
 	'$filename' using 1:2 w p title '(Hr, SMS)';
 	EOF
+
+
+#!/usr/bin/gnuplot -persist
+set terminal png nocrop font small size 640,480
+set output 'dotplot.png'
+set style data histograms
+set title "Most Active Sections Of NJ CL for Open Mics"
+set xlabel "CL Section Name"
+set ylabel "Post Count"
+plot "/tmp/bargraph.csv" using 2:xticlabels(1) notitle
