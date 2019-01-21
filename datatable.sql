@@ -175,6 +175,11 @@ SELECT DATE(dt_utc), MIN(temp_f) AS temp_f_dmin, AVG(temp_f) AS temp_f_davg, 65 
     SELECT CONCAT(MONTH(d_utc),'-',YEAR((d_utc))) AS month_year, SUM(hdd_d65) AS hdd_m65,SUM(hdd_d70) AS hdd_m70, COUNT(id) AS COUNT FROM  e1248_daily
     GROUP BY month_year temp3;
 
+CREATE TABLE `justdates` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dates` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2193 DEFAULT CHARSET=utf8
 
 DROP PROCEDURE IF EXISTS filldates;
 DELIMITER |
@@ -210,8 +215,11 @@ Then up-arrow and repeat the INSERT as many times as needed. It doubles the numb
 
 Find missing days;
 
+# gives date range to look for data
 SELECT MIN(e1248_daily.`d_utc`), MAX(e1248_daily.`d_utc`) FROM e1248_daily;
 
+
+# Shows records where data is missing
 SELECT
     `justdates`.`id`
     , `justdates`.`dates`
@@ -222,8 +230,9 @@ FROM
         ON (`e1248_daily`.`d_utc` = `justdates`.`dates`)
           -- inject min and max from the table below
         WHERE dates > '2017-05-01' AND dates < '2019-01-14' AND d_utc IS NULL;
-        or
+        
 
+# Shows all records including holes
 SELECT
     `justdates`.`id`
     , `justdates`.`dates`
