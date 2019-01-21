@@ -222,5 +222,16 @@ FROM
         ON (`e1248_daily`.`d_utc` = `justdates`.`dates`)
           -- inject min and max from the table below
         WHERE dates > '2017-05-01' AND dates < '2019-01-14' AND d_utc IS NULL;
+        or
+
+SELECT
+    `justdates`.`id`
+    , `justdates`.`dates`
+    , `e1248_daily`.`d_utc`
+FROM
+    `weather`.`e1248_daily`
+    RIGHT OUTER JOIN `weather`.`justdates` 
+        ON (`e1248_daily`.`d_utc` = `justdates`.`dates`)
+        WHERE dates > '2017-05-01' AND dates < '2019-01-14';
 
 
