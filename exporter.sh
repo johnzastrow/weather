@@ -5,5 +5,6 @@
 # sudo chmod ug+rwX /tmp/mysql
 # ls -lR /tmp
 
+rm -Rf /tmp/*.csv
 source my.config
 mysql $dbconnect --skip-column-names weather < exporter.sql
