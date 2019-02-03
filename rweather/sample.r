@@ -3,14 +3,28 @@ library(DBI)
 # Connect to my-db as defined in ~/.my.cnf
 # Use this when taking next step con <- dbConnect(RMariaDB::MariaDB(), group = "my-db")
 
+
+# R needs a full path to find the settings file.
+rmariadb.settingsfile<-"F:\\br8k_home\\GitHub\\weather\\my.cnf"
+
+
+rmariadb.db<-"weather"
+weather<-dbConnect(RMariaDB::MariaDB(),default.file=rmariadb.settingsfile,group=rmariadb.db) 
+
+# list the table. This confirms we connected to the database.
+dbListTables(weather)
+
+# disconnect to clean up the connection to the database.
+dbDisconnect(weather)
+
 localuserpassword <- "yub.miha"
 library(RMariaDB)
 # The connection method below uses a password stored in a variable.  
 # To use this set localuserpassword="The password of newspaper_search_results_user" 
 
-myDb <- dbConnect(RMariaDB::MariaDB(), user='newspaper_search_results_user', password=localuserpassword, dbname='newspaper_search_results', host='localhost')
-dbListTables(storiesDb)
-dbDisconnect(storiesDb)
+weather <- dbConnect(RMariaDB::MariaDB(), user='jcz', password=localuserpassword, dbname='weather', host='192.168.1.110')
+dbListTables(weather)
+dbDisconnect(weather)
 
 dbListTables(con)
 dbWriteTable(con, "mtcars", mtcars)

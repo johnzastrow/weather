@@ -3,3 +3,4 @@
 *.config
 *.csv
 .Rproj.user
+*.cnf
