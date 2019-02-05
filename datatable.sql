@@ -274,3 +274,17 @@ FROM
         WHERE dates > '2017-05-01' AND dates < '2019-01-14';
 
 
+-- Create a monthly table of aggregates
+CREATE TABLE e1248_monthly AS SELECT
+    YEAR (`d_utc`) AS YEARY
+    , MONTH(`d_utc`) AS MONTHM
+    , SUM(`hdd_d65`)
+    , SUM(`hdd_d70`)
+    , SUM(`windsp_mph_davg`)
+    ,COUNT(id)
+FROM
+    `weather`.`e1248_daily`
+GROUP BY MONTH(`d_utc`), YEAR(`d_utc`)
+-- order by YEAR(`d_utc`), MONTH(`d_utc`) 
+ORDER BY YEARY, MONTHM
+;
