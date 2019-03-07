@@ -245,16 +245,96 @@ FROM
 
 
 -- Create a monthly table of aggregates
-CREATE TABLE e1248_monthly AS SELECT
+CREATE view v_e1248_monthly AS SELECT
     YEAR (`d_utc`) AS YEARY
     , MONTH(`d_utc`) AS MONTHM
     , SUM(`hdd_d65`)
     , SUM(`hdd_d70`)
     , SUM(`windsp_mph_davg`)
-    ,COUNT(id)
+    ,COUNT(recs)
 FROM
-    `weather`.`e1248_daily`
-GROUP BY MONTH(`d_utc`), YEAR(`d_utc`)
--- order by YEAR(`d_utc`), MONTH(`d_utc`) 
+    `weather`.`v_e1248_daily`
+GROUP BY MONTH(`d_utc`), YEAR(`d_utc`) 
 ORDER BY YEARY, MONTHM
 ;
+
+   CREATE VIEW `weather`.`v_KPWM_daily` AS SELECT
+      DATE(dt_utc) AS d_utc,
+      AVG(temp_f) AS temp_f_davg,
+      65 - AVG(temp_f) AS hdd_d65,
+      70 - AVG(temp_f) AS hdd_d70,
+      MIN(temp_f) AS temp_f_dmin,
+      MAX(temp_f) AS temp_f_dmax,
+      AVG(windsp_mph) AS windsp_mph_davg,
+      COUNT(id) AS recs
+    FROM
+      KPWM
+    GROUP BY DATE(dt_utc);
+
+CREATE VIEW v_KPWM_monthly AS SELECT
+    YEAR (`d_utc`) AS YEARY
+    , MONTH(`d_utc`) AS MONTHM
+    , SUM(`hdd_d65`) AS m_hdd_d65
+    , SUM(`hdd_d70`) AS m_hdd_d70
+    , SUM(`windsp_mph_davg`) AS m_windsp_davg
+    ,COUNT(recs) AS count_recs
+FROM
+    `weather`.`v_KPWM_daily`
+GROUP BY MONTH(`d_utc`), YEAR(`d_utc`) 
+ORDER BY YEARY, MONTHM
+
+CREATE
+    /*[ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}]
+    [DEFINER = { user | CURRENT_USER }]
+    [SQL SECURITY { DEFINER | INVOKER }]*/
+    VIEW `weather`.`v_E1248_daily` 
+    AS
+  SELECT
+    d_utc,
+    temp_f_davg,
+    hdd_d65,
+    hdd_d70,
+    temp_f_dmin,
+    temp_f_dmax,
+    windsp_mph_davg,
+    recs
+  FROM
+    (SELECT
+      DATE(dt_utc) AS d_utc,
+      AVG(temp_f) AS temp_f_davg,
+      65 - AVG(temp_f) AS hdd_d65,
+      70 - AVG(temp_f) AS hdd_d70,
+      MIN(temp_f) AS temp_f_dmin,
+      MAX(temp_f) AS temp_f_dmax,
+      AVG(windsp_mph) AS windsp_mph_davg,
+      COUNT(id) AS recs
+    FROM
+      e1248
+    GROUP BY DATE(dt_utc)) temp1;
+;
+
+
+CREATE VIEW v_E1248_monthly AS SELECT
+    YEAR (`d_utc`) AS YEARY
+    , MONTH(`d_utc`) AS MONTHM
+    , SUM(`hdd_d65`) AS m_hdd_d65
+    , SUM(`hdd_d70`) AS m_hdd_d70
+    , SUM(`windsp_mph_davg`) AS m_windsp_davg
+    ,COUNT(recs) AS count_recs
+FROM
+    `weather`.`v_e1248_daily`
+GROUP BY MONTH(`d_utc`), YEAR(`d_utc`) 
+ORDER BY YEARY, MONTHM
+
+CREATE ALGORITHM=UNDEFINED DEFINER=`jcz`@`%` SQL SECURITY DEFINER VIEW `v_e1248_monthly` AS 
+SELECT
+ CONCAT(YEAR(`v_e1248_daily`.`d_utc`),'-',LPAD(MONTH(`v_e1248_daily`.`d_utc`),2,'0'),'-15') AS DATER,
+  YEAR(`v_e1248_daily`.`d_utc`) AS `YEARY`,
+  MONTH(`v_e1248_daily`.`d_utc`) AS `MONTHM`,
+  SUM(`v_e1248_daily`.`hdd_d65`) AS `m_hdd_d65`,
+  SUM(`v_e1248_daily`.`hdd_d70`) AS `m_hdd_d70`,
+  SUM(`v_e1248_daily`.`windsp_mph_davg`) AS `m_windsp_davg`,
+  COUNT(`v_e1248_daily`.`recs`) AS `count_recs`
+FROM `v_e1248_daily`
+GROUP BY MONTH(`v_e1248_daily`.`d_utc`),YEAR(`v_e1248_daily`.`d_utc`)
+ORDER BY YEAR(`v_e1248_daily`.`d_utc`),MONTH(`v_e1248_daily`.`d_utc`)
