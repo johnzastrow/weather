@@ -4,3 +4,5 @@
 *.csv
 .Rproj.user
 *.cnf
+dbbak.sh
+weatherlog*
