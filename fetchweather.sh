@@ -58,6 +58,8 @@ do
     mysql $dbconnect -D weather -se "select count(*) from $table"; >> $outputter
 done
 
+stats.sh  >> $outputter
+
 echo "" >> $outputter
 echo "" >> $outputter
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" >> $outputter
@@ -119,6 +121,8 @@ do
     echo $table ": " >> $outputter
     mysql $dbconnect -D weather -se "select count(*) from $table"; >> $outputter
 done
+
+stats.sh  >> $outputter
 
 echo " *************** END *********************** "  >> $outputter
 echo ""  >> $outputter

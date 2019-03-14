@@ -4,7 +4,7 @@
 #  dumps mysql database to dated file
 ##################################
 
-# set vx
+ set vx
 # Date and other variables pretty self explanatory, S is seconds
 # date format is currently YYYYMMDD_HHMMSS
         outputter=log$(date +%Y-%m-%d).txt
@@ -16,4 +16,8 @@
         directory=$(pwd)
 
 source my.config
-mysqldump $dbconnect -opt weather > $dater_weatherdump.sql
+echo $pwd
+echo $directory
+cd /home/jcz/Documents/github/weather
+echo $pwd
+mysqldump $dbconnect -v --opt weather > ./$dater_weatherdump.sql
