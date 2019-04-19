@@ -6,3 +6,4 @@
 *.cnf
 dbbak.sh
 weatherlog*
+.vscode/*
