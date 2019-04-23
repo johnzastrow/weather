@@ -16,8 +16,9 @@ cd /home/jcz/Documents/github/weather
 	namer=$(whoami)
 	hoster=$(hostname)
 	directory=$(pwd)
-	output="/home/jcz/Documents/github/weather/"
+	output="/home/jcz/Documents/github/weather/jobs/"
 	outputter=$output"weatherlog$(date +%Y-%m-%d).txt"
+        runner="/home/jcz/Documents/github/weather"
 
 
 	site1="E1248"
@@ -35,8 +36,13 @@ cd /home/jcz/Documents/github/weather
 	site4="E4279"
 	weather4="E4279.csv"
 	weather4b=$output"E4279_$dater.csv"
+
+echo "Sourcing the config..."
+
 source my.config
-cd $output
+
+mkdir -p $output
+# cd $output
 echo $directory
 echo " ************************************* " >> $outputter
 echo "Date: " $longdate >> $outputter
@@ -53,13 +59,15 @@ echo $dbconnect
 
 for table in $(mysql $dbconnect -D weather -Bse "show tables");
 do 
-    echo "------" >> $outputter
-    echo $table ": " >> $outputter
-    mysql $dbconnect -D weather -se "select count(*) from $table"; >> $outputter
+    echo "------" 
+    echo $table ": " 
+    mysql $dbconnect -D weather -se "select count(*) from $table"; 
 done
 
-stats.sh  >> $outputter
+# cd $runner
+/home/jcz/Documents/github/weather/./stats.sh  >> $outputter
 
+cd $output
 echo "" >> $outputter
 echo "" >> $outputter
 echo "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" >> $outputter
@@ -101,7 +109,8 @@ wait
 cp -v $weather4 $weather4b >> $outputter
 echo "Completing $weather4"
 
-
+# Running the loading script
+cd $runner
 echo ""  >> $outputter
 echo "calling mysql"
  mysql $dbconnect  weather < loader.sql  >> $outputter
@@ -117,12 +126,12 @@ echo "There are this many records in database after loading" >> $outputter
 
 for table in $(mysql $dbconnect -D weather -Bse "show tables");
 do 
-    echo "------" >> $outputter
-    echo $table ": " >> $outputter
-    mysql $dbconnect -D weather -se "select count(*) from $table"; >> $outputter
+    echo "------" 
+    echo $table ": " 
+    mysql $dbconnect -D weather -se "select count(*) from $table"; 
 done
 
-stats.sh  >> $outputter
+./stats.sh  >> $outputter
 
 echo " *************** END *********************** "  >> $outputter
 echo ""  >> $outputter

@@ -15,9 +15,19 @@
         hoster=$(hostname)
         directory=$(pwd)
 
+        output="/home/jcz/Documents/github/weather/jobs/"
+        outputter=$output"weatherlog$(date +%Y-%m-%d).txt"
+        runner="/home/jcz/Documents/github/weather"
+
+
 source my.config
 echo $pwd
 echo $directory
 cd /home/jcz/Documents/github/weather
 echo $pwd
 mysqldump $dbconnect -v --opt weather > ./$dater_weatherdump.sql
+mkdir -p archive
+
+
+# /usr/bin/find /path/to/files/ -type f -name '*.jpg' -mtime +10 -exec mv {} /path/to/archive/ \;
+# /usr/bin/find /path/to/archive/ -type f -name '*.jpg' -mtime +30 -exec rm {} \;
