@@ -6,3 +6,6 @@
 *.cnf
 dbbak.sh
 weatherlog*
+.Rhistory
+sample.r 
+.RData
