@@ -9,3 +9,4 @@ weatherlog*
 .Rhistory
 sample.r 
 .RData
+.vscode/*
