@@ -84,3 +84,60 @@ from (`v_kpwm_weekly`
      on (`v_kpwm_weekly`.`MIN_DAY` = `v_justweeks`.`MIN_DAY`))
 group by `v_justweeks`.`MIN_DAY`
 order by `v_justweeks`.`MIN_DAY`)
+
+
+CREATE
+    /*[ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}]
+    [DEFINER = { user | CURRENT_USER }]
+    [SQL SECURITY { DEFINER | INVOKER }]*/
+    VIEW `weather`.`v_annual_electric_bill` 
+    AS
+(
+SELECT
+    YEAR(`PayDate`) AS YEAR
+    , ROUND(SUM(`Amount`),2) AS sum_amount
+FROM
+    `weather`.`electric_bills`
+GROUP BY `year`
+
+);
+
+CREATE
+    /*[ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}]
+    [DEFINER = { user | CURRENT_USER }]
+    [SQL SECURITY { DEFINER | INVOKER }]*/
+    VIEW `weather`.`v_annual_gas` 
+    AS
+(
+
+SELECT
+   YEAR(`DateBill`) AS YEAR
+    , ROUND(SUM(`ThermsUsed`),2) AS annual_therms
+    , ROUND(SUM(`ActualGasUsage`),2) AS annual_cost
+FROM
+    `weather`.`gas_bills`
+GROUP BY `year`
+);
+
+
+CREATE
+    /*[ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}]
+    [DEFINER = { user | CURRENT_USER }]
+    [SQL SECURITY { DEFINER | INVOKER }]*/
+    VIEW `weather`.`v_e4229_annual` 
+    AS
+(
+
+SELECT
+    `YEARY`
+    , SUM(`w_hdd_d65`) AS sum_hdd65
+    , SUM(`w_hdd_d70`) AS sum_hdd70
+    , SUM(`w_windsp_sum`) AS sum_wind
+    , ROUND(AVG(`w_temp_f_avg`),2) AS avg_temp
+    , SUM(`count_recs`) AS sum_recs
+FROM
+    `weather`.`v_e4229_weekly`
+GROUP BY `YEARY`
+
+);
+
