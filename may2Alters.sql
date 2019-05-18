@@ -59,37 +59,34 @@ ORDER BY `v_justweeks`.`MIN_DAY` ASC;
 
 
 CREATE VIEW `v_weekly_compare` AS (
-select
+SELECT
   `v_justweeks`.`MIN_DAY` AS `MIN_DAY`,
-  sum(`v_E1248_weekly`.`w_hdd_d65`) AS `e1248_sum_hdd65`,
-  avg(`v_E1248_weekly`.`w_temp_f_avg`) AS `e1248_avg_degf`,
-  sum(`v_E1248_weekly`.`count_recs`) AS `e1248_sum_recs`,
-  sum(`v_E4279_weekly`.`w_hdd_d65`) AS `e4279_sum_hdd65`,
-  avg(`v_E4279_weekly`.`w_temp_f_avg`) AS `e4279_avg_degf`,
-  sum(`v_E4279_weekly`.`count_recs`) AS `e4279_sum_recs`,
-  sum(`v_E4229_weekly`.`w_hdd_d65`) AS `e4229_sum_hdd65`,
-  avg(`v_E4229_weekly`.`w_temp_f_avg`) AS `e4229_avg_degf`,
-  sum(`v_E4229_weekly`.`count_recs`) AS `e4229_sum_recs`,
-  sum(`v_KPWM_weekly`.`w_hdd_d65`) AS `kpwm_sum_hdd65`,
-  avg(`v_KPWM_weekly`.`w_temp_f_avg`) AS `kpwm_avg_degf`,
-  sum(`v_KPWM_weekly`.`count_recs`) AS `kpwm_sum_recs`
-from (`v_KPWM_weekly`
-   left join (`v_e4229_weekly`
-              left join (`v_e4279_weekly`
-                         left join (`v_justweeks`
-                                    left join `v_e1248_weekly`
-                                      on (`v_e1248_weekly`.`MIN_DAY` = `v_justweeks`.`MIN_DAY`))
-                           on (`v_e4279_weekly`.`MIN_DAY` = `v_justweeks`.`MIN_DAY`))
-                on (`v_e4229_weekly`.`MIN_DAY` = `v_justweeks`.`MIN_DAY`))
-     on (`v_kpwm_weekly`.`MIN_DAY` = `v_justweeks`.`MIN_DAY`))
-group by `v_justweeks`.`MIN_DAY`
-order by `v_justweeks`.`MIN_DAY`);
+  SUM(`v_E1248_weekly`.`w_hdd_d65`) AS `e1248_sum_hdd65`,
+  AVG(`v_E1248_weekly`.`w_temp_f_avg`) AS `e1248_avg_degf`,
+  SUM(`v_E1248_weekly`.`count_recs`) AS `e1248_sum_recs`,
+  SUM(`v_E4279_weekly`.`w_hdd_d65`) AS `e4279_sum_hdd65`,
+  AVG(`v_E4279_weekly`.`w_temp_f_avg`) AS `e4279_avg_degf`,
+  SUM(`v_E4279_weekly`.`count_recs`) AS `e4279_sum_recs`,
+  SUM(`v_E4229_weekly`.`w_hdd_d65`) AS `e4229_sum_hdd65`,
+  AVG(`v_E4229_weekly`.`w_temp_f_avg`) AS `e4229_avg_degf`,
+  SUM(`v_E4229_weekly`.`count_recs`) AS `e4229_sum_recs`,
+  SUM(`v_KPWM_weekly`.`w_hdd_d65`) AS `kpwm_sum_hdd65`,
+  AVG(`v_KPWM_weekly`.`w_temp_f_avg`) AS `kpwm_avg_degf`,
+  SUM(`v_KPWM_weekly`.`count_recs`) AS `kpwm_sum_recs`
+FROM (`v_KPWM_weekly`
+   LEFT JOIN (`v_E4229_weekly`
+              LEFT JOIN (`v_E4279_weekly`
+                         LEFT JOIN (`v_justweeks`
+                                    LEFT JOIN `v_E1248_weekly`
+                                      ON (`v_E1248_weekly`.`MIN_DAY` = `v_justweeks`.`MIN_DAY`))
+                           ON (`v_E4279_weekly`.`MIN_DAY` = `v_justweeks`.`MIN_DAY`))
+                ON (`v_E4229_weekly`.`MIN_DAY` = `v_justweeks`.`MIN_DAY`))
+     ON (`v_KPWM_weekly`.`MIN_DAY` = `v_justweeks`.`MIN_DAY`))
+GROUP BY `v_justweeks`.`MIN_DAY`
+ORDER BY `v_justweeks`.`MIN_DAY`);
 
 
-CREATE
-    /*[ALGORITHM = {UNDEFINED | MERGE | TEMPTABLE}]
-    [DEFINER = { user | CURRENT_USER }]
-    [SQL SECURITY { DEFINER | INVOKER }]*/
+CREATE 
     VIEW `weather`.`v_annual_electric_bill` 
     AS
 (
@@ -118,7 +115,7 @@ GROUP BY `year`
 
 
 CREATE
-    VIEW `weather`.`v_e4229_annual` 
+    VIEW `weather`.`v_E4229_annual` 
     AS
 (
 
@@ -130,8 +127,7 @@ SELECT
     , ROUND(AVG(`w_temp_f_avg`),2) AS avg_temp
     , SUM(`count_recs`) AS sum_recs
 FROM
-    `weather`.`v_e4229_weekly`
+    `weather`.`v_E4229_weekly`
 GROUP BY `YEARY`
 
 );
-
