@@ -1,3 +1,4 @@
+# Bump
 mysql -h servername -u username --password=secret \
 --skip-column-names -e "SELECT * FROM table where FROM_UNIXTIME(timestamp) >=NOW() - INTERVAL 7 DAY;" | sed 's/\t/;/g;s/\n//g' > week.csv
 
