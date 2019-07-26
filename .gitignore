@@ -1,7 +1,7 @@
 # config files #
 
 *.config
-*.csv
+*log*.csv
 .Rproj.user
 *.cnf
 dbbak.sh
