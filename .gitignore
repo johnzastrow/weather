@@ -2,6 +2,7 @@
 
 *.config
 *log*.csv
+*weekly*.csv
 .Rproj.user
 *.cnf
 dbbak.sh
