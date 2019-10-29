@@ -60,6 +60,6 @@ plt.grid(b=True, which='major', color='#CCCCCC', linestyle='--')
 plt.grid(b=True, which='minor', color='#CCCCCC', linestyle=':')
 plt.legend(loc='upper left', shadow=True)
 plt.tight_layout() # optional to fix certain layout issues.
-plt.savefig('e4229weekly_temps_compare_years.png')
+plt.savefig('e4229weekly_temps_compare_years.png', dpi=200)
 plt.show()
 plt.close()
