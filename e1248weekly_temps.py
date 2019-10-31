@@ -57,7 +57,7 @@ plt.annotate('This week', xy=(int(todayweek), 0), xytext=(int(todayweek)+0.25, 3
 
 plt.ylabel("Weekly Avg Temp (F)")
 plt.minorticks_on()
-plt.title("Weekly Air Temps (F) by Day of Year from Station e1248 on: "+ today)
+plt.title("Weekly Air Temps (F) by Week Number of Year from Station e1248 on: "+ today)
 plt.grid(b=True, which='major', color='#CCCCCC', linestyle='--')
 plt.grid(b=True, which='minor', color='#CCCCCC', linestyle=':')
 plt.legend(loc='upper left', shadow=True)
