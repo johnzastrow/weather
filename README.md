@@ -1,11 +1,10 @@
-# weather
+# Weather - mostly temps, near Cumberland Center, Maine
 
-playground for fetching, storing and analyzing local weather data
+Playground for fetching, storing and analyzing local weather data
 
 ## Heading 2
 
-* bullet
-
-sdfdf
-
-* wef
+* Fetches hourly data (on a daily job) citizen weather obs
+* Loads into Mariadb
+* Summarizes into various views within the database
+* Generates sharts to compare temps over time and across the four stations
