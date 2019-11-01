@@ -11,3 +11,7 @@ weatherlog*
 sample.r 
 .RData
 .vscode/*
+
+# Sensitive
+*pdf
+*PDF
