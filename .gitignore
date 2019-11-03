@@ -1,7 +1,8 @@
 # config files #
 
 *.config
-*.csv
+*log*.csv
+*weekly*.csv
 .Rproj.user
 *.cnf
 dbbak.sh
@@ -10,3 +11,8 @@ weatherlog*
 sample.r 
 .RData
 .vscode/*
+
+# Sensitive
+*pdf
+*PDF
+*ftp*

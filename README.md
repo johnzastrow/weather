@@ -1,11 +1,16 @@
-# weather
+# Weather - mostly temps, near Cumberland Center, Maine
 
-playground for fetching, storing and analyzing local weather data
+Playground for fetching, storing and analyzing local weather data
 
-## Heading 2
+## Functions
 
-* bullet
+* Fetches hourly data (on a daily job) citizen weather obs
+* Loads into Mariadb
+* Summarizes into various views within the database (SQL)
+* Generates sharts to compare temps over time and across the four stations (python, matplotlib)
+* All from a Raspberry Pi
 
-sdfdf
-
-* wef
+## TODO
+* Interactive charts
+* Interactive maps
+* More Charts
