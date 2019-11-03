@@ -4,6 +4,9 @@
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <title>Temps Near Cumberland, Maine</title>
     <meta charset="UTF-8">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
     <style>
       h1 {
         background: #303030;
@@ -27,6 +30,40 @@
       body {
         font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
       }
+
+      body {
+        margin: 0;
+        padding: 0;
+      }
+
+      #map {
+        /* position: absolute;
+        top: 0; 
+        bottom: 0;
+        width: 50%;
+        margin: auto; */
+        height: 800px;
+        width: 50%;
+        margin: 0 auto;
+      }
+
+      <style type='text/css'>
+#info {
+    display: block;
+    position: relative;
+    margin: 0px auto;
+    width: 50%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    color: #222;
+    /* background: #fff; */
+    margin: 0 auto;
+    }
+
+
     </style>
   </head>
   <body>
@@ -90,18 +127,53 @@
 href="https://catalog.data.gov/dataset/usgs-national-elevation-dataset-ned">US
       National Elevation Dataset</a> appear to be the most accurate.<br>
     <br>
-    <a href="KPWM_map.png" target="_blank"><img src="KPWM_map.png"
-        alt="kpwm map" width="800" height="566" border="0"></a><br>
-    Figure 7. Detailed map of monitoring location KPWM<br>
-    <img src="E4229_map.png" alt="" width="800" height="566"><br>
-    Figure 8. Detailed map of monitoring location E4229<br>
-    <a href="E4279_map.png" target="_blank"><img src="E4279_map.png"
-        alt="" width="800" height="566" border="0"></a><br>
-    Figure 9. Detailed map of monitoring location E4279<br>
-    <a href="E1248_map.png" target="_blank"><img src="E1248_map.png"
-        alt="" width="800" height="566" border="0"></a><br>
-    Figure 10. Detailed map of monitoring location E1248<br>
+     <div id='map'></div>
+    <pre id='info'></pre>
+    
+    <script>
+      mapboxgl.accessToken = 'pk.eyJ1IjoiYnI4a3dhbGwiLCJhIjoiY2syaTcyOGFrMWRlbTNidDhvNWx1dnQ2OCJ9.Yl6GO_JMPV7K0KINitwd-g'; // replace this with your access token
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/br8kwall/ck2i567p42b7w1cmunimf1rbr', // replace this with your style URL
+        center: [-70.25, 43.79],
+        zoom: 10
+      });
+      // code from the next step will go here
+  
+      map.on('click', function(e) {
+    var features = map.queryRenderedFeatures(e.point, {
+      layers: ['cumbmetstations'] // replace this with the name of the layer
+    });
+  
+    if (!features.length) {
+      return;
+    }
+  
+    var feature = features[0];
+  
+    var popup = new mapboxgl.Popup({ offset: [0, -15] })
+      .setLngLat(feature.geometry.coordinates)
+      .setHTML('<h3>' + feature.properties.Site + '</h3><p>NED Elevation (m): ' + feature.properties.NED_m + '</p> <p> <a href="https://weather.gladstonefamily.net/site/search?site=' + feature.properties.Site + '&Get+information=Get+information" target="_blank">Site Detail</a></p>' )
+      .addTo(map);
+  });
+
+
+
+  map.on('mousemove', function (e) {
+  document.getElementById('info').innerHTML =
+  // e.point is the x, y coordinates of the mousemove event relative
+  // to the top-left corner of the map
+  // JSON.stringify(e.point) + '<br />' +
+  // e.lngLat is the longitude, latitude geographical position of the event
+  JSON.stringify(e.lngLat.wrap());
+  });
+  
+  
+      </script>
+
+
     <br>
+    Page Last modified: November 3, 2019
     <br>
   </body>
 </html>
