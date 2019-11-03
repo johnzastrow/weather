@@ -1,4 +1,5 @@
 import datetime
+
 today = (datetime.datetime.now().strftime("%Y, %M, %d"))
 week = (datetime.datetime.now().strftime("%W"))
 print(today)

@@ -23,7 +23,7 @@ plt.figure(figsize=(12,6))
 engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@localhost:3306/weather')
 
 ### E4229 
-my_queryE4229 = "SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_e4229_weekly` WHERE (YEARY = " + str(todayyear) + " and WEEKW >= "+str(plotweek)+")"
+my_queryE4229 = "SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_E4229_weekly` WHERE (YEARY = " + str(todayyear) + " and WEEKW >= "+str(plotweek)+")"
 df1 = pd.read_sql_query(my_queryE4229,engine)
 tempf_valsE4229 = df1['w_temp_f_avg']
 daterE4229 = df1['WEEKW']
@@ -52,7 +52,7 @@ daterKPWM= df1['WEEKW']
 plt.plot(daterKPWM, tempf_valsKPWM, linestyle="", color="green", linewidth=1, marker='$K$', label="KPWM (15m)", markersize=4)
 
 ### show line of the max week of data.  
-my_max = "SELECT max(WEEKW) as maxweek FROM `weather`.`v_e1248_weekly` WHERE (YEARY = " + str(todayyear) + ")"
+my_max = "SELECT max(WEEKW) as maxweek FROM `weather`.`v_E1248_weekly` WHERE (YEARY = " + str(todayyear) + ")"
 dfmaxweek = pd.read_sql_query(my_max,engine)
 maxweek = dfmaxweek['maxweek']
 plt.vlines(maxweek, ymin=50, ymax=60, colors='#29d193', linewidth=1)
