@@ -1,0 +1,931 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet">
+
+<Styles>
+ <Style ss:ID="Default" ss:Name="Normal">
+  <Alignment ss:Vertical="Bottom"/>
+  <Borders/>
+  <Font/>
+  <Interior/>
+  <NumberFormat/>
+  <Protection/>
+ </Style>
+ <Style ss:ID="s27">
+  <Font x:Family="Swiss" ss:Color="#0000FF" ss:Bold="1"/>
+ </Style>
+ <Style ss:ID="s21">
+  <NumberFormat ss:Format="yyyy\-mm\-dd"/>
+ </Style>
+ <Style ss:ID="s22">
+  <NumberFormat ss:Format="yyyy\-mm\-dd\ hh:mm:ss"/>
+ </Style>
+ <Style ss:ID="s23">
+  <NumberFormat ss:Format="hh:mm:ss"/>
+ </Style>
+</Styles>
+
+ <Worksheet ss:Name="Sheet1">
+  <ss:Table>
+   <ss:Row>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">DateBill</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">TypeRead</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">CurrentReadDate</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">PreviousReadDate</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">NumMeterReadDays</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">CurrentReading</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">PreviousReading</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">MeteredUnits</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">PressureAdjFactor</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">ActualCCFUsage</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">BTUCorrectionFactor</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">ThermsUsed</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">AmountActGasUse</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">MeterNumber</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">RateCode</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">Distribution</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">Commodity</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">TrustAssessment</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">TotalCostPerTherm</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">DistributionB</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">CommodityB</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">TrustAssessmentB</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">TotalCostPerThermB</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">ActualGasUsage</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">FacilityandServiceCharge</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">CurrentCharges</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">Adjustment</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">CurrentChargesDueDate</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">PreviousRequiredPayment</Data></ss:Cell>
+    <ss:Cell  ss:StyleID="s27"><Data ss:Type="String">PaymentActivity</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2016-12-07T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2016-12-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2016-11-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">32</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">2850</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">2713</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">137</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">139.31</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.02</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">142.31</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">218.95</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.87</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.53</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">218.95</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.57</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">239.52</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-01-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">128.52</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 128.52</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-01-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-01-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2016-12-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">30</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3073</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">2850</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">223</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">226.76</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">234.25</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">360.4</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.87</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.53</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">360.4</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.57</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">380.97</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-02-01T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">239.52</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Debit 0.00</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-02-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-02-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-01-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">30</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3292</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3073</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">219</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">222.70</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">231.36</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">355.95</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.87</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.53</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">355.95</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.57</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">376.52</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-03-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">620.49</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 862.49</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-03-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-03-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-02-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">28</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3488</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3292</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">196</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">199.31</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.05</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">210.91</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">324.49</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.87</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.53</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">324.49</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.57</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">345.06</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-04-02T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">134.52</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 134.52</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-04-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-04-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-03-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">33</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3734</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3488</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">246</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">250.15</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">259.53</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">399.3</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.87</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.53</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">399.3</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.57</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">419.87</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-05-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">345.06</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 345.06</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-05-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-05-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-04-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">28</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3821</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3734</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">87</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">88.47</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.02</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">90.85</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">139.72</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.87</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.53</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">139.72</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.57</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">160.29</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-05-31T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">419.87</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 419.87</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-06-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-06-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-05-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">33</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3897</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3821</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">76</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">77.28</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.02</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">79.24</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">122.24</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.87</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.53</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.54</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">122.24</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.81</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">143.05</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-07-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">160.29</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 160.29</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-07-10T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-07-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-06-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">31</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3935</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3897</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">38</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">38.64</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.02</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">39.49</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">61.36</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.54</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">61.36</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.81</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">82.17</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-08-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">143.05</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 143.05</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-08-07T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-08-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-07-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">28</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3966</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3935</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">31</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">31.52</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.02</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">32.23</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">49.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.54</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">49.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.81</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">70.7</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-09-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">82.17</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 82.17</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-09-07T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-09-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-08-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">34</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3985</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3966</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">19</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">19.32</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.02</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">19.73</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">30.59</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.54</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">30.59</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.81</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">51.4</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-10-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">70.7</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 70.70</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-10-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-10-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-09-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">28</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">4021</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">3985</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">36</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">36.60</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.02</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">37.51</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">58.02</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.54</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.68</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.56</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">58.02</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.81</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">78.83</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-11-01T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">51.4</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 51.40</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-11-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-11-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-10-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">30</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">4078</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">4021</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">57</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">57.96</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">59.91</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">93.16</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.68</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.56</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">93.16</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.81</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">113.97</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-12-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">78.83</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 80.00</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-12-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-12-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2017-11-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">32</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">4245</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">4078</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">167</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">169.82</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">176.39</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">275.25</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.68</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.56</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">275.25</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.81</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">296.06</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-01-02T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">112.8</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 112.80</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-02-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-02-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-01-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">33</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">4792</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">4519</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">273</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">277.61</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">287.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">454.32</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.68</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.56</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">454.32</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.81</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">475.13</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-03-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">474.61</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 474.61</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-03-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-03-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-02-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">28</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">4974</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">4792</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">182</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">185.07</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">191.81</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">313.76</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.68</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.56</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.06</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.94</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">313.76</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.81</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">334.57</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-04-02T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">475.13</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 475.13</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-04-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-04-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-03-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">30</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5165</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">4974</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">191</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">194.22</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">200.94</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">392.33</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.06</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.94</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">392.33</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.81</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">413.14</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-05-02T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">334.57</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 334.57</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-05-09T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-05-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-04-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">29</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5289</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5165</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">124</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">126.09</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.02</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">129.43</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">254.27</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.06</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.94</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.88</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.06</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.96</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">254.27</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">20.81</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">275.08</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-06-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">413.14</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 413.14</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-07-09T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-07-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-06-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">30</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5383</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5347</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">36</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">36.60</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">37.75</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">74.98</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.06</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.97</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">74.98</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">21.1</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">96.08</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-08-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">140.08</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 140.08</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-09-10T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-09-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-08-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">34</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5458</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5417</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">41</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">41.69</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.02</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">42.68</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">84.42</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.06</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.97</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">84.42</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">21.1</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">105.52</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-10-07T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">91.54</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 91.54</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-10-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-10-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-09-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">27</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5492</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5458</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">34</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">34.57</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">35.66</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">69.27</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.06</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.97</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.80</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">69.27</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">21.1</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">90.37</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-10-31T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">105.52</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Debit 0.00</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-11-07T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-11-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-10-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">33</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5594</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5492</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">102</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">103.72</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">106.98</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">193.36</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.80</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.79</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">193.36</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">21.1</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">214.46</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-12-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">195.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 301.52</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-12-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-12-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-11-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">30</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5766</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5594</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">172</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">174.90</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.04</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">181.95</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">325.1</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.79</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">325.1</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">21.1</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">346.2</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-01-02T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">108.83</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 108.83</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-01-07T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-01-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2018-12-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">30</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5953</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5766</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">187</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">190.16</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.04</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">197.82</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">355.09</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.79</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">355.09</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">21.1</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">376.19</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-02-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">346.2</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 346.20</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-02-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-02-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-01-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">32</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">6216</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">5953</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">263</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">267.44</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.04</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">278.49</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">499.41</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.79</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">499.41</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">21.1</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">520.51</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-03-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">376.19</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 376.19</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-03-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-03-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-02-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">28</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">6422</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">6216</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">206</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">209.48</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.04</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">218.13</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">391.55</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.79</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">391.55</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">21.1</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">412.65</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-04-02T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">520.51</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 520.51</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-04-04T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-04-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-03-05T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">29</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">6594</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">6422</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">172</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">174.90</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">181.57</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">327.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.79</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.05</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.85</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">327.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">21.1</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">348.13</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-05-01T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">412.65</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 412.65</Data></ss:Cell>
+   </ss:Row>
+   <ss:Row>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-05-06T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Normal Reading</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-05-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-04-03T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">30</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">6700</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">6594</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">106</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.01</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">107.79</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.03</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">111.43</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">206.64</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">14Y355954</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">RGME</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.89</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0.05</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">1.85</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String"></Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">206.64</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">21.1</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">227.74</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">0</Data></ss:Cell>
+    <ss:Cell ss:StyleID="s22"><Data ss:Type="DateTime">2019-06-02T00:00:00.000000.000</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="Number">348.13</Data></ss:Cell>
+    <ss:Cell><Data ss:Type="String">Credit 348.13</Data></ss:Cell>
+   </ss:Row>
+  </ss:Table>
+ </Worksheet>
+</Workbook>
