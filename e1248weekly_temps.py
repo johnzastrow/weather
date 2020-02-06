@@ -37,10 +37,19 @@ tempf_vals2019 = df2019['w_temp_f_avg']
 dater2019 = df2019['WEEKW']
 plt.plot(dater2019, tempf_vals2019, linestyle="", color="blue", linewidth=1, marker='D', label="2019", markersize=4 )
 
-### 2019 
-my_max = ''' SELECT max(WEEKW) as maxweek FROM `weather`.`v_E1248_weekly` WHERE (YEARY = 2019);'''
+### 2020 
+my_query2020 = ''' SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_E1248_weekly` WHERE (YEARY = 2020) and WEEKW <= 52;'''
+df1 = pd.read_sql_query(my_query2020,engine)
+tempf_vals2020 = df1['w_temp_f_avg']
+dater2020 = df1['WEEKW']
+plt.plot(dater2020, tempf_vals2020, linestyle="", color="#b752bf", linewidth=1, marker='>', label="2020", markersize=8)
+
+### Max  
+my_max = ''' SELECT max(WEEKW) as maxweek FROM `weather`.`v_E1248_weekly` WHERE (YEARY = 2020);'''
 dfmaxweek = pd.read_sql_query(my_max,engine)
 maxweek = dfmaxweek['maxweek']
+
+
 # Drawings
 plt.vlines(maxweek, ymin=1, ymax=80, colors='#29d193', linewidth=1)
 plt.annotate('Max Data Week', xy=(int(maxweek), 0), xytext=(int(maxweek)+0.25, 4), rotation='vertical', fontsize=10)
