@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>Temps Near Cumberland, Maine</title>
+  <meta charset="UTF-8">
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    h1 {
+      background: #303030;
+      color: #c8d0b4;
+      border: 1px solid #808080;
+      padding: 3px;
+      font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    h2 {
+      background: #303030;
+      color: #c8d0b4;
+      border: 1px solid #808080;
+      padding: 3px;
+    }
+
+    h3 {
+      background: #303030;
+      color: #c8d0b4;
+      border: 1px solid #808080;
+      padding: 3px;
+    }
+
+    body {
+      font-family: 'Roboto', 'Arial', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    }
+
+    body {
+      margin: 20;
+      padding: 20;
+    }
+
+
+    #map {
+      /* position: absolute;
+        top: 0; 
+        bottom: 0;
+        width: 50%;
+        margin: auto; */
+      height: 800px;
+      width: 50%;
+      margin: 20px;
+    }
+
+    <style type='text/css'>#info {
+      display: block;
+      position: relative;
+      margin: 0px auto;
+      width: 50%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      font-size: 12px;
+      text-align: center;
+      color: #222;
+      /* background: #fff; */
+      margin: 0 auto;
+    }
+  </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-1583313-2"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-1583313-2');
+  </script>
+
+
+</head>
+
+<body>
+  <div id='page'>
+    <h1>Temperatures Near Cumberland Center, Maine from Four Volunteer
+      Meteorological Stations</h1>
+    <p>Data provided graciously by <a href="https://weather.gladstonefamily.net">https://weather.gladstonefamily.net</a>
+      and the <a href="http://www.wxqa.com">Citizen Weather Observer
+        Program</a><br>
+    </p>
+    <p>The source code for collecting data and generating charts is <a
+        href="https://github.com/johnzastrow/weather">here</a><br>
+    </p>
+    <a href="all_sites_weekly_temps_compare_years.png" target="_blank"><img
+        src="all_sites_weekly_temps_compare_years.png" alt="12 week
+        chart" width="800" height="400" border="0"></a><br>
+    Figure 1. Weekly air temperatures for the previous 12 weeks at the
+    four observation stations. <br>
+    <br>
+    In all charts, <b>Max Data</b> is the latest measurement from the
+    database. <b>This Week,</b> or this whatever time period, is the
+    date the chart was generated. Variance between the two indicates
+    that either data for the current day is not available in the
+    database for some reason (if This Week is later than Max Data) or
+    someone went back in time and ran the chart scripts before the data
+    were loaded (if This Week is earlier than Max Data).<br>
+    <br>
+    <a href="e4229weekly_temps_compare_years.png" target="_blank"><img src="e4229weekly_temps_compare_years.png" alt="weekly temp
+        comparison" width="800" height="400" border="0"></a><br>
+    Figure 2. Yearly comparison of weekly average air temperatures at
+    station e4229<br>
+    <br>
+    <br>
+    <a href="e1248weekly_temps_compare_years.png" target="_blank"><img src="e1248weekly_temps_compare_years.png"
+        alt="e1248" width="800" height="400" border="0"></a><br>
+    Figure 3. Yearly comparison of weekly average air temperatures at
+    station e1248<br>
+    <br>
+    <br>
+    <a href="e4279weekly_temps_compare_years.png" target="_blank"><img src="e4279weekly_temps_compare_years.png"
+        alt="43534534 3" width="800" height="400" border="0"></a><br>
+    Figure 4. Yearly comparison of weekly average air temperatures at
+    station e4279<br>
+    <br>
+    <a href="kpwmweekly_temps_compare_years.png" target="_blank"><img src="kpwmweekly_temps_compare_years.png"
+        alt="kpwm" width="800" height="400" border="0"></a><br>
+    Figure 5. Yearly comparison of weekly average air temperatures at
+    station KPWM<br>
+    <br>
+    <a href="OverviewMap.png" target="_blank"><img src="OverviewMap.png" alt="overview map" width="800" height="566"
+        border="0"></a><br>
+    Figure 6. Overview map displaying the relative positions of the
+    monitoring stations and the home base. Static map developed with <a href="https://qgis.org/en/site/">Qgis</a><br>
+    <br>
+    Two different elevations for each station are shown in the table.
+    Elevations from the <a href="https://catalog.data.gov/dataset/usgs-national-elevation-dataset-ned">US
+      National Elevation Dataset</a> appear to be the most accurate.<br>
+    <br>
+
+    <pre id='info'></pre>
+    <div id='map'></div>
+
+
+    <script>
+      mapboxgl.accessToken =
+        'pk.eyJ1IjoiYnI4a3dhbGwiLCJhIjoiY2syaTcyOGFrMWRlbTNidDhvNWx1dnQ2OCJ9.Yl6GO_JMPV7K0KINitwd-g'; // replace this with your access token
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/br8kwall/ck2i567p42b7w1cmunimf1rbr', // replace this with your style URL
+        center: [-70.25, 43.79],
+        zoom: 10
+      });
+      // code from the next step will go here
+
+      map.on('click', function (e) {
+        var features = map.queryRenderedFeatures(e.point, {
+          layers: ['cumbmetstations'] // replace this with the name of the layer
+        });
+
+        if (!features.length) {
+          return;
+        }
+
+        var feature = features[0];
+
+        var popup = new mapboxgl.Popup({
+            offset: [0, -15]
+          })
+          .setLngLat(feature.geometry.coordinates)
+          .setHTML('<h3>' + feature.properties.Site + '</h3><p>NED Elevation (m): ' + feature.properties.NED_m +
+            '</p> <p> <a href="https://weather.gladstonefamily.net/site/search?site=' + feature.properties.Site +
+            '&Get+information=Get+information" target="_blank">Site Detail</a></p>')
+          .addTo(map);
+      });
+
+
+
+      map.on('mousemove', function (e) {
+        document.getElementById('info').innerHTML =
+          // e.point is the x, y coordinates of the mousemove event relative
+          // to the top-left corner of the map
+          // JSON.stringify(e.point) + '<br />' +
+          // e.lngLat is the longitude, latitude geographical position of the event
+          JSON.stringify(e.lngLat.wrap());
+      });
+    </script>
+    <p>Figure 7. Interactive map provided by <a href="https://www.mapbox.com/">Mapbox.com</a> </p>
+    <p>
+      <a href="diagram.png" target="_blank"><img src="diagram.png" alt="Technical architecture" width="700"
+          border="0"></a><br>
+      Figure 8. Plumbing. This is how this site is maintained.
+    </p>
+    <br>
+    Page Last modified: February 21, 2020
+    <br>
+  </div>
+</body>
+
+</html>

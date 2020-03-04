@@ -11,3 +11,14 @@ weatherlog*
 sample.r 
 .RData
 .vscode/*
+E*.csv
+K*.csv
+all*.png
+
+# Sensitive
+*pdf
+*PDF
+*ftp*
+*compare*.png
+xfer.sh
+
