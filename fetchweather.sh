@@ -4,7 +4,7 @@
 # in the directory in which it is run
 ##################################
 
-set vx
+# set vx
 # Date and other variables pretty self explanatory, S is seconds
 # date format is currently YYYYMMDD_HHMMSS
 
