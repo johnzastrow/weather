@@ -1,12 +1,13 @@
 import matplotlib.pyplot as plt
-import pandas as pd
-import sqlalchemy
 import numpy as np
+import pandas as pd
 from pandas.plotting import register_matplotlib_converters
 register_matplotlib_converters()
 from matplotlib import dates as mpl_dates
 from matplotlib.ticker import (MultipleLocator, FormatStrFormatter, AutoMinorLocator)
 import datetime
+import storage
+conn = storage.connect()
 today = (datetime.datetime.now().strftime("%Y-%m-%d"))
 print(today)
 todayweek = (datetime.datetime.now().strftime("%W"))
@@ -14,11 +15,10 @@ todayweek = (datetime.datetime.now().strftime("%W"))
 # Make the figure wider to see things better
 plt.figure(figsize=(12,6))
 
-engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@localhost:3306/weather')
 
 ### 2017 
 my_query2017 = ''' SELECT `day_of_year`, YEAR(d_utc) AS yeary, `temp_f_davg` , `temp_f_dmin` , `temp_f_dmax`, recs FROM `weather`.`v_E1248_daily` WHERE YEAR(d_utc)=2018 AND recs >200 ORDER BY day_of_year ASC;'''
-df1 = pd.read_sql_query(my_query2017,engine)
+df1 = pd.read_sql_query(my_query2017,conn)
 tempf_vals2017 = df1['temp_f_davg']
 dater2017 = df1['day_of_year']
 lower_y_error2017 = df1['temp_f_dmin']
@@ -27,8 +27,6 @@ y_error = [lower_y_error2017, upper_y_error2017]
 # plt.errorbar(x, y, yerr = y_error
 plt.errorbar(dater2017, tempf_vals2017, yerr = y_error, fmt='-o')
 plt.plot(dater2017, tempf_vals2017, linestyle="", color="red", linewidth=1, marker='o', label="2017", markersize=2)
-
-
 
 ### Max  
 my_max = ''' SELECT max(WEEKW) as maxweek FROM `weather`.`v_E1248_weekly` WHERE (YEARY = 2020);'''

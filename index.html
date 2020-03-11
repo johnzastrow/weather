@@ -194,14 +194,17 @@
           border="0"></a><br>
     </p>
     <p>
-      Figure 8. Plumbing. This is how this site is maintained. <br>Data is stored in a Maria DB database (fomerly MySQL)
-      with a ton of views for easy data extraction and concise, centralized aggregation.
-      <br>Data shuffling logic is done with
-      BASH shell scripts and the presentation (charts) is performed with matplotlib glued to the database through
-      sqlalchemy, pandas, and numpy -- all Python libraries.
-      <br>Data operations all run
-      on a Raspberry Pi 3B in the basement. The page and image you see are all static from a shared host and are updated
-      nightly by jobs from the Pi.
+      Figure 8. Plumbing. This is how this site is maintained. <br>
+      <ul>
+        <li>Data is stored in a Maria DB database (fomerly MySQL) with a ton of views for easy data extraction and
+          concise, centralized aggregation.</li>
+        <li>Data shuffling logic is done with BASH shell scripts and the presentation (charts) is performed with
+          matplotlib glued to the database through
+          sqlalchemy, pandas, and numpy -- all Python libraries.</li>
+        <li>Data operations all run on a Raspberry Pi 3B in the basement. The page and image you see are all static from
+          a shared host and are
+          updated nightly by jobs from the Pi.</li>
+      </ul>
     </p>
     <p>
       <a href="images/raspberry-pi-3.png" target="_blank"><img src="images/raspberry-pi-3.png" alt="Primary server"
