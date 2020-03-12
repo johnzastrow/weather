@@ -6,4 +6,5 @@ python3 e4229weekly_temps.py
 python3 e4279weekly_temps.py
 python3 kpwm_weekly_temps.py
 python3 weeknum.py
+python3 all_sites_daily_temp_ranges.py
 ./xfer.sh
