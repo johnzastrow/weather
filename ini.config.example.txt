@@ -1,0 +1,32 @@
+ini.config:
+
+[mysqlDB]
+host = '0.0.0.0'
+db = 'test'
+user = 'root'
+pass = 'pswd'
+
+storage.py:
+
+import configparser
+import MySQLdb.cursors
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+
+def connect():
+    return MySQLdb.connect(host = config['mysqlDB']['host'],
+                           user = config['mysqlDB']['user'],
+                           passwd = config['mysqlDB']['pass'],
+                           db = config['mysqlDB']['db'])
+
+                           def connect():
+      engine = sqlalchemy.create_engine('mysql+pymysql://'user':'pass''@'host':3306/'db'')
+Usage example:
+...
+import storage
+conn = storage.connect()
+...
+### 2017 
+my_query2017 = ''' SELECT `day_of_year`, YEAR(d_utc) AS yeary, `temp_f_davg` FROM `weather`.`v_E1248_daily`;'''
+df1 = pd.read_sql_query(my_query2017,engine)
