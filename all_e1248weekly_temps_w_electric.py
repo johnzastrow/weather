@@ -17,7 +17,7 @@ intofyear = int(dayofyear)
 plotweek = int(todayweek) - 12
 daym30 = intofyear - 30
 
-engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@192.168.1.110:3306/weather')
+engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@127.0.0.1:3306/weather')
 
 ### E1248 Temps
 my_query = ''' SELECT `MIN_DAY`, `YEARWEEK`, `w_temp_f_avg` , w_temp_f_avg - w_temp_f_min AS temp_f_min , w_temp_f_max - w_temp_f_avg AS temp_f_max, sum_recs FROM `v_E1248_weekly` WHERE sum_recs > 1 ORDER BY MIN_DAY ASC; '''
@@ -52,7 +52,7 @@ ax.set_ylabel("Temperature (F)",color="black",fontsize=12)
 ax2=ax.twinx()
 # make a plot with different y-axis using second axis object
 ax2.plot(dater_elec, elec_vals,color="black",marker="o", markersize=2, label="E1248 Elec")
-ax2.set_ylabel("Sum Electricity Usage (Sum KwH / week)",color="black",fontsize=12)
+ax2.set_ylabel("Sum Electricity Usage (kWh / week)",color="black",fontsize=12)
 
 
 
@@ -64,11 +64,12 @@ plt.minorticks_on()
 
 
 
-plt.title("Retrospective Weekly Ranges (Avg, Max, Min) Air Temps (F) by Week Number at E1248 on: "+ today)
+plt.title("Weekly Air Temps (Avg, Max, Min) (F) at E1248 and Weekly Electricity Use on: "+ today)
 plt.grid(b=True, which='major', color='#CCCCCC', linestyle='--')
 plt.grid(b=True, which='minor', color='#CCCCCC', linestyle=':')
 plt.legend(loc='lower left', shadow=True)
+ax.legend(loc='lower right', shadow=True)
 plt.tight_layout() # optional to fix certain layout issues.
-plt.savefig('all_weekly_temps_E1248_ranges.png', dpi=200)
+plt.savefig('all_e1248_weekly_elect_temp_ranges.png', dpi=200)
 plt.show()
 plt.close()

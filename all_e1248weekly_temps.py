@@ -33,8 +33,7 @@ dater = df1['YEARWEEK']
 lower_y_error = df1['temp_f_min']
 upper_y_error = df1['temp_f_max']
 y_error = [lower_y_error, upper_y_error]
-plt.errorbar(dater, tempf_vals, yerr = y_error, fmt='-o', ecolor='black', label="E1248", color='blue', elinewidth=2)
-
+plt.errorbar(dater, tempf_vals, yerr = y_error, markersize=2, fmt='-o', ecolor='#9cb9e5', label="E1248", color='#1269ea', elinewidth=2)
 
 plt.ylabel("All Data Weekly Avg, Min, Max Temp (F)")
 plt.xlabel("Year and Week Number")
