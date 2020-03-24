@@ -27,19 +27,13 @@ dater = df1['MIN_DAY']
 lower_y_error = df1['temp_f_min']
 upper_y_error = df1['temp_f_max']
 y_error = [lower_y_error, upper_y_error]
-# plt.errorbar(dater, tempf_vals, yerr = y_error, markersize=2, fmt='-o', ecolor='#9cb9e5', label="E1248 Temp", color='#1269ea', elinewidth=2)
-
 
 # House electric
 my_query_elec = ''' SELECT `MIN_DAY`, `SUM_KWH` FROM `v_weekly_electric_use` where MIN_DAY > '2017-05-01' ORDER BY MIN_DAY ASC;'''
 df1 = pd.read_sql_query(my_query_elec,engine)
 elec_vals = df1['SUM_KWH']
 dater_elec = df1['MIN_DAY']
-# plt.plot(dater_elec, elec_vals, markersize=2, label="E1248 Elec", color='black')
 
-# Make the figure wider to see things better
-# plt.figure(figsize=(14,6))
-# create figure and axis objects with subplots()
 fig,ax = plt.subplots(figsize=(12, 6))
 
 # make a plot
