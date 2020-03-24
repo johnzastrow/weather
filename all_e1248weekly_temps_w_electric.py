@@ -64,6 +64,6 @@ plt.grid(b=True, which='minor', color='#CCCCCC', linestyle=':')
 plt.legend(loc='lower left', shadow=True)
 ax.legend(loc='lower right', shadow=True)
 plt.tight_layout() # optional to fix certain layout issues.
-plt.savefig('all_e1248_weekly_elect_temp_ranges.png', dpi=200)
+plt.savefig('all_weekly_e1248_elect_temp_ranges.png', dpi=200)
 plt.show()
 plt.close()

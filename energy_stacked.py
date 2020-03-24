@@ -21,7 +21,7 @@ engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@127.0.0.1:3306/w
 
 plt.figure(figsize=(12,6))
 ### utility use
-my_query = '''SELECT YEARMONTH, NORM_DATE, monthly_elec_use, monthly_gas_use FROM v_monthly_utilities where YEAR(NORM_DATE) >= 2016; '''
+my_query = '''SELECT YEARMONTH, NORM_DATE, monthly_elec_use, monthly_gas_use FROM v_monthly_utilities where year(NORM_DATE) >= 2017; '''
 df1 = pd.read_sql_query(my_query,engine)
 elec_vals = df1['monthly_elec_use']
 gas_vals = df1['monthly_gas_use']
@@ -35,6 +35,10 @@ plt.xticks(rotation=45)
 plt.xticks(fontsize=8)
 plt.minorticks_on()
 
+# Drawings
+plt.vlines('2017-10-01', ymin=1, ymax=2000, colors='#0D0D0D', linewidth=3)
+plt.annotate('House remodel', xy=('2017-10-03', 1000), xytext=('2017-10-04', 1200), rotation='vertical', fontsize=10)
+
 # Make the figure wider to see things better
 #
 plt.title("Monthly Energy Use on: "+ today)
@@ -43,6 +47,6 @@ plt.grid(b=True, which='major', color='#CCCCCC', linestyle='--')
 plt.grid(b=True, which='minor', color='#CCCCCC', linestyle=':')
 plt.legend(loc='lower left', shadow=True)
 plt.tight_layout() # optional to fix certain layout issues.
-plt.savefig('monthly_energy_use.png', dpi=200)
+plt.savefig('monthly_stacked_energy_use.png', dpi=200)
 plt.show()
 plt.close()
