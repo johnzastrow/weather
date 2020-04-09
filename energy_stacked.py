@@ -36,8 +36,16 @@ plt.xticks(fontsize=8)
 plt.minorticks_on()
 
 # Drawings
-plt.vlines('2017-10-01', ymin=1, ymax=2000, colors='#0D0D0D', linewidth=3)
+plt.vlines('2017-10-01', ymin=1, ymax=2000, colors='#bbbbbb', linewidth=3)
 plt.annotate('House remodel', xy=('2017-10-03', 1000), xytext=('2017-10-04', 1200), rotation='vertical', fontsize=10)
+plt.vlines('2018-01-01', ymin=1, ymax=2000, colors='#0D0D0D', linewidth=3)
+plt.annotate('2018', xy=('2018-01-03', 1000), xytext=('2018-01-04', 1200), rotation='vertical', fontsize=10)
+plt.vlines('2019-01-01', ymin=1, ymax=2000, colors='#0D0D0D', linewidth=3)
+plt.annotate('2019', xy=('2019-01-03', 1000), xytext=('2019-01-04', 1200), rotation='vertical', fontsize=10)
+plt.vlines('2020-01-01', ymin=1, ymax=2000, colors='#0D0D0D', linewidth=3)
+plt.annotate('2020', xy=('2020-01-03', 1000), xytext=('2020-01-04', 1200), rotation='vertical', fontsize=10)
+plt.vlines('2020-03-16', ymin=1, ymax=2000, colors='#bbbbbb', linewidth=3)
+plt.annotate('COVID-19 Lockdown', xy=('2020-03-17', 1000), xytext=('2020-03-18', 1200), rotation='vertical', fontsize=10)
 
 # Make the figure wider to see things better
 #

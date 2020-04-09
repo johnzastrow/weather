@@ -14,7 +14,7 @@ todayweek = (datetime.datetime.now().strftime("%W"))
 # Make the figure wider to see things better
 plt.figure(figsize=(12,6))
 
-engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@localhost:3306/weather')
+engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@192.168.1.110:3306/weather')
 
 ### 2017 
 my_query2017 = ''' SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_E4229_weekly` WHERE (YEARY = 2017) and WEEKW <= 52;'''
