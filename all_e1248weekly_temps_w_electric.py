@@ -50,6 +50,19 @@ ax2.set_ylabel("Sum Electricity Usage (kWh / week)",color="black",fontsize=12)
 
 
 
+# Drawings
+plt.vlines('2017-10-01', ymin=1, ymax=500, colors='#5ca800', linewidth=3)
+plt.annotate('House remodel', xy=('2017-10-03', 400), xytext=('2017-10-06', 50), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
+plt.vlines('2018-01-01', ymin=1, ymax=500, colors='#d18700', linewidth=3)
+plt.annotate('2018', xy=('2018-01-03', 400), xytext=('2018-01-06', 400), rotation='vertical', fontsize=10, color='#d18700')
+plt.vlines('2019-01-01', ymin=1, ymax=500, colors='#d18700', linewidth=3)
+plt.annotate('2019', xy=('2019-01-03', 400), xytext=('2019-01-06', 400), rotation='vertical', fontsize=10, color='#d18700')
+plt.vlines('2020-01-01', ymin=30, ymax=500, colors='#d18700', linewidth=3)
+plt.annotate('2020', xy=('2020-01-03', 400), xytext=('2020-01-06', 400), rotation='vertical', fontsize=10, color='#d18700')
+plt.vlines('2020-03-16', ymin=30, ymax=500, colors='#5ca800', linewidth=3)
+plt.annotate('COVID-19', xy=('2020-03-17', 400), xytext=('2020-03-20', 50), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
+
+
 # plt.ylabel("All Data Weekly Avg, Min, Max Temp (F)")
 plt.xlabel("Year and Week Number")
 plt.xticks(rotation=45)
