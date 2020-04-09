@@ -18,6 +18,7 @@ All*.png
 weekly*.png
 Weekly*.png
 *.pyc
+month*.png
 
 # Sensitive
 *pdf
