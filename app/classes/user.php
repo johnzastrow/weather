@@ -20,10 +20,10 @@ class User {
     }
 
     // Insert
-    public function insert($name, $email){
+    public function insert($comment, $email){
       try{
-        $stmt = $this->conn->prepare("INSERT INTO crud_users (name, email) VALUES(:name, :email)");
-        $stmt->bindparam(":name", $name);
+        $stmt = $this->conn->prepare("INSERT INTO notes (comment, email) VALUES(:comment, :email)");
+        $stmt->bindparam(":comment", $comment);
         $stmt->bindparam(":email", $email);
         $stmt->execute();
         return $stmt;
@@ -34,10 +34,10 @@ class User {
 
 
     // Update
-    public function update($name, $email, $id){
+    public function update($comment, $email, $id){
         try{
-          $stmt = $this->conn->prepare("UPDATE crud_users SET name = :name, email = :email WHERE id = :id");
-          $stmt->bindparam(":name", $name);
+          $stmt = $this->conn->prepare("UPDATE notes SET comment = :comment, email = :email WHERE id = :id");
+          $stmt->bindparam(":comment", $comment);
           $stmt->bindparam(":email", $email);
           $stmt->bindparam(":id", $id);
           $stmt->execute();
@@ -51,7 +51,7 @@ class User {
     // Delete
     public function delete($id){
       try{
-        $stmt = $this->conn->prepare("DELETE FROM crud_users WHERE id = :id");
+        $stmt = $this->conn->prepare("DELETE FROM notes WHERE id = :id");
         $stmt->bindparam(":id", $id);
         $stmt->execute();
         return $stmt;

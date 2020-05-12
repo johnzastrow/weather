@@ -10,7 +10,7 @@ $objUser = new User();
 // GET
 if(isset($_GET['edit_id'])){
     $id = $_GET['edit_id'];
-    $stmt = $objUser->runQuery("SELECT * FROM crud_users WHERE id=:id");
+    $stmt = $objUser->runQuery("SELECT * FROM notes WHERE id=:id");
     $stmt->execute(array(":id" => $id));
     $rowUser = $stmt->fetch(PDO::FETCH_ASSOC);
 }else{
@@ -20,16 +20,16 @@ if(isset($_GET['edit_id'])){
 
 // POST
 if(isset($_POST['btn_save'])){
-  $name   = strip_tags($_POST['name']);
+  $comment   = strip_tags($_POST['comment']);
   $email  = strip_tags($_POST['email']);
 
   try{
      if($id != null){
-       if($objUser->update($name, $email, $id)){
+       if($objUser->update($comment, $email, $id)){
          $objUser->redirect('index.php?updated');
        }
      }else{
-       if($objUser->insert($name, $email)){
+       if($objUser->insert($comment, $email)){
          $objUser->redirect('index.php?inserted');
        }else{
          $objUser->redirect('index.php?error');
@@ -60,17 +60,17 @@ if(isset($_POST['btn_save'])){
                   <form  method="post">
                     <div class="form-group">
                         <label for="id">ID</label>
-                        <input class="form-control" type="text" name="id" id="id" value="<?php print($rowUser['id']); ?>" readonly>
+                        <input class="form-control" type="text" comment="id" id="id" value="<?php print($rowUser['id']); ?>" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="name">Name *</label>
-                        <input  class="form-control" type="text" name="name" id="name" placeholder="First Name and Last Name" value="<?php print($rowUser['name']); ?>" required maxlength="100">
+                        <label for="comment">comment *</label>
+                        <input  class="form-control" type="text" comment="comment" id="comment" placeholder="First comment and Last comment" value="<?php print($rowUser['comment']); ?>" required maxlength="100">
                     </div>
                     <div class="form-group">
                         <label for="email">Email *</label>
-                        <input  class="form-control" type="text" name="email" id="email" placeholder="johndoel@gmail.com" value="<?php print($rowUser['email']); ?>" required maxlength="100">
+                        <input  class="form-control" type="text" comment="email" id="email" placeholder="johndoel@gmail.com" value="<?php print($rowUser['email']); ?>" required maxlength="100">
                     </div>
-                    <input class="btn btn-primary mb-2" type="submit" name="btn_save" value="Save">
+                    <input class="btn btn-primary mb-2" type="submit" comment="btn_save" value="Save">
                   </form>
                 </main>
             </div>

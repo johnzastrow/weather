@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `crud_users`
+-- Table structure for table `notes`
 --
 
-DROP TABLE IF EXISTS `crud_users`;
+DROP TABLE IF EXISTS `notes`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `crud_users` (
+CREATE TABLE `notes` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
@@ -32,12 +32,12 @@ CREATE TABLE `crud_users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `crud_users`
+-- Dumping data for table `notes`
 --
 
-LOCK TABLES `crud_users` WRITE;
-/*!40000 ALTER TABLE `crud_users` DISABLE KEYS */;
-/*!40000 ALTER TABLE `crud_users` ENABLE KEYS */;
+LOCK TABLES `notes` WRITE;
+/*!40000 ALTER TABLE `notes` DISABLE KEYS */;
+/*!40000 ALTER TABLE `notes` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
