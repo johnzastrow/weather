@@ -28,3 +28,4 @@ month*.png
 *compare*.png
 xfer.sh
 
+dumps/*.sql
