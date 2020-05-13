@@ -6,15 +6,15 @@ error_reporting(E_ALL);
 
 require_once 'classes/user.php';
 
-$objNotes = new Notes();
+$objnotes = new notes();
 
 // GET
 if(isset($_GET['delete_id'])){
   $id = $_GET['delete_id'];
   try{
     if($id != null){
-      if($objNotes->delete($id)){
-        $objNotes->redirect('index.php?deleted');
+      if($objnotes->delete($id)){
+        $objnotes->redirect('index.php?deleted');
       }
     }else{
       var_dump($id);
@@ -43,21 +43,21 @@ if(isset($_GET['delete_id'])){
                     <?php
                       if(isset($_GET['updated'])){
                         echo '<div class="alert alert-info alert-dismissable fade show" role="alert">
-                        <strong>Notes!<trong> Updated with success.
+                        <strong>notes!<trong> Updated with success.
                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true"> &times; </span>
                           </button>
                         </div>';
                       }else if(isset($_GET['deleted'])){
                         echo '<div class="alert alert-info alert-dismissable fade show" role="alert">
-                        <strong>Notes!<trong> Deleted with success.
+                        <strong>notes!<trong> Deleted with success.
                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true"> &times; </span>
                           </button>
                         </div>';
                       }else if(isset($_GET['inserted'])){
                         echo '<div class="alert alert-info alert-dismissable fade show" role="alert">
-                        <strong>Notes!<trong> Inserted with success.
+                        <strong>notes!<trong> Inserted with success.
                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true"> &times; </span>
                           </button>
@@ -77,32 +77,32 @@ if(isset($_GET['delete_id'])){
                               <tr>
                                 <th>#</th>
                                 <th>Comment</th>
-                                <th>Email</th>
+                                <th>Type</th>
                                 <th></th>
                               </tr>
                             </thead>
                             <?php
                               $query = "SELECT * FROM notes";
-                              $stmt = $objNotes->runQuery($query);
+                              $stmt = $objnotes->runQuery($query);
                               $stmt->execute();
                             ?>
                             <tbody>
                                 <?php if($stmt->rowCount() > 0){
-                                  while($rowNotes = $stmt->fetch(PDO::FETCH_ASSOC)){
+                                  while($rownotes = $stmt->fetch(PDO::FETCH_ASSOC)){
                                  ?>
                                  <tr>
-                                    <td><?php print($rowNotes['id']); ?></td>
+                                    <td><?php print($rownotes['id']); ?></td>
 
                                     <td>
-                                      <a href="form.php?edit_id=<?php print($rowNotes['id']); ?>">
-                                      <?php print($rowNotes['name']); ?>
+                                      <a href="form.php?edit_id=<?php print($rownotes['id']); ?>">
+                                      <?php print($rownotes['comment']); ?>
                                       </a>
                                     </td>
 
-                                    <td><?php print($rowNotes['email']); ?></td>
+                                    <td><?php print($rownotes['type']); ?></td>
 
                                     <td>
-                                      <a class="confirmation" href="index.php?delete_id=<?php print($rowNotes['id']); ?>">
+                                      <a class="confirmation" href="index.php?delete_id=<?php print($rownotes['id']); ?>">
                                       <span data-feather="trash"></span>
                                       </a>
                                     </td>
