@@ -2,7 +2,7 @@
 
 require_once 'database.php';
 
-class User {
+class Notes {
     private $conn;
 
     // Constructor
@@ -20,11 +20,11 @@ class User {
     }
 
     // Insert
-    public function insert($comment, $email){
+    public function insert($comment, $type){
       try{
-        $stmt = $this->conn->prepare("INSERT INTO notes (comment, email) VALUES(:comment, :email)");
+        $stmt = $this->conn->prepare("INSERT INTO notes (comment, type) VALUES(:comment, :type)");
         $stmt->bindparam(":comment", $comment);
-        $stmt->bindparam(":email", $email);
+        $stmt->bindparam(":type", $type);
         $stmt->execute();
         return $stmt;
       }catch(PDOException $e){
@@ -34,11 +34,11 @@ class User {
 
 
     // Update
-    public function update($comment, $email, $id){
+    public function update($comment, $type, $id){
         try{
-          $stmt = $this->conn->prepare("UPDATE notes SET comment = :comment, email = :email WHERE id = :id");
+          $stmt = $this->conn->prepare("UPDATE notes SET comment = :comment, type = :type WHERE id = :id");
           $stmt->bindparam(":comment", $comment);
-          $stmt->bindparam(":email", $email);
+          $stmt->bindparam(":type", $type);
           $stmt->bindparam(":id", $id);
           $stmt->execute();
           return $stmt;

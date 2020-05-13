@@ -21,15 +21,15 @@ if(isset($_GET['edit_id'])){
 // POST
 if(isset($_POST['btn_save'])){
   $comment   = strip_tags($_POST['comment']);
-  $email  = strip_tags($_POST['email']);
+  $type  = strip_tags($_POST['type']);
 
   try{
      if($id != null){
-       if($objUser->update($comment, $email, $id)){
+       if($objUser->update($comment, $type, $id)){
          $objUser->redirect('index.php?updated');
        }
      }else{
-       if($objUser->insert($comment, $email)){
+       if($objUser->insert($comment, $type)){
          $objUser->redirect('index.php?inserted');
        }else{
          $objUser->redirect('index.php?error');
@@ -67,8 +67,8 @@ if(isset($_POST['btn_save'])){
                         <input  class="form-control" type="text" comment="comment" id="comment" placeholder="First comment and Last comment" value="<?php print($rowUser['comment']); ?>" required maxlength="100">
                     </div>
                     <div class="form-group">
-                        <label for="email">Email *</label>
-                        <input  class="form-control" type="text" comment="email" id="email" placeholder="johndoel@gmail.com" value="<?php print($rowUser['email']); ?>" required maxlength="100">
+                        <label for="type">Type *</label>
+                        <input  class="form-control" type="text" comment="type" id="type" placeholder="johndoel@gmail.com" value="<?php print($rowUser['type']); ?>" required maxlength="100">
                     </div>
                     <input class="btn btn-primary mb-2" type="submit" comment="btn_save" value="Save">
                   </form>

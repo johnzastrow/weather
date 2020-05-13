@@ -3,7 +3,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>CRUD - ProgrammingKnowledge</title>
+<title>Event Notes</title>
 
 <!-- Bootstrap core CSS -->
 <link href="css/bootstrap.min.css" rel="stylesheet">
