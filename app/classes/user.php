@@ -2,7 +2,7 @@
 
 require_once 'database.php';
 
-class Notes {
+class notes {
     private $conn;
 
     // Constructor
