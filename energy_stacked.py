@@ -46,6 +46,8 @@ plt.vlines('2020-01-01', ymin=1, ymax=2000, colors='#0D0D0D', linewidth=3)
 plt.annotate('2020', xy=('2020-01-03', 1000), xytext=('2020-01-04', 1200), rotation='vertical', fontsize=10)
 plt.vlines('2020-03-16', ymin=1, ymax=2000, colors='#bbbbbb', linewidth=3)
 plt.annotate('COVID-19 Lockdown', xy=('2020-03-17', 1000), xytext=('2020-03-18', 1200), rotation='vertical', fontsize=10)
+plt.vlines('2020-06-14', ymin=1, ymax=2000, colors='#bbbbbb', linewidth=3)
+plt.annotate('Hot Tub Installed', xy=('2020-06-15', 1000), xytext=('2020-06-16', 1200), rotation='vertical', fontsize=10)
 
 # Make the figure wider to see things better
 #

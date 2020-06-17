@@ -55,7 +55,7 @@ if(isset($_POST['btn_save'])){
                 <!-- Sidebar menu -->
                 <?php require_once 'includes/sidebar.php'; ?>
                 <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-                  <h1 style="margin-top: 10px">Add / Edit notess</h1>
+                  <h1 style="margin-top: 10px">Add / Edit notes</h1>
                   <p>Required fields are in (*)</p>
                   <form  method="post">
                     <div class="form-group">
