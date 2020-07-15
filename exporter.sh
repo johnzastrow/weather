@@ -8,3 +8,5 @@
 rm -Rf /tmp/*.csv
 source my.config
 mysql $dbconnect --skip-column-names weather < exporter.sql
+
+# HI there
