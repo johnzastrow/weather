@@ -10,6 +10,7 @@ import datetime
 today = (datetime.datetime.now().strftime("%Y-%m-%d"))
 print(today)
 todayweek = (datetime.datetime.now().strftime("%W"))
+todayyear = (datetime.datetime.now().strftime("%Y"))
 
 # Make the figure wider to see things better
 plt.figure(figsize=(12,6))
@@ -35,7 +36,7 @@ my_query2019 = ''' SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_E4279_weekly
 df2019 = pd.read_sql_query(my_query2019,engine)
 tempf_vals2019 = df2019['w_temp_f_avg']
 dater2019 = df2019['WEEKW']
-plt.plot(dater2019, tempf_vals2019, linestyle="", color="blue", linewidth=1, marker='D', label="2019", markersize=4 )
+plt.plot(dater2019, tempf_vals2019, linestyle="", color="#777777", linewidth=1, marker='D', label="2019", markersize=6 )
 
 ### 2020 
 my_query2020 = ''' SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_E4279_weekly` WHERE (YEARY = 2020) and WEEKW <= 52;'''
@@ -44,8 +45,15 @@ tempf_vals2020 = df1['w_temp_f_avg']
 dater2020 = df1['WEEKW']
 plt.plot(dater2020, tempf_vals2020, linestyle="", color="#b752bf", linewidth=1, marker='>', label="2020", markersize=8)
 
+### 2021 
+my_query2021 = ''' SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_E4279_weekly` WHERE (YEARY = 2021) and WEEKW <= 52;'''
+df1 = pd.read_sql_query(my_query2021,engine)
+tempf_vals2021 = df1['w_temp_f_avg']
+dater2021 = df1['WEEKW']
+plt.plot(dater2021, tempf_vals2021, linestyle="", color="#261499", linewidth=1, marker='^', label="2021", markersize=6)
+
 ### Max  
-my_max = ''' SELECT max(WEEKW) as maxweek FROM `weather`.`v_E4279_weekly` WHERE (YEARY = 2020);'''
+my_max = ''' SELECT max(WEEKW) as maxweek FROM `weather`.`v_E4279_weekly` WHERE (YEARY = ''' + todayyear + ''');'''
 dfmaxweek = pd.read_sql_query(my_max,engine)
 maxweek = dfmaxweek['maxweek']
 

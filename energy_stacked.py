@@ -27,8 +27,9 @@ elec_vals = df1['monthly_elec_use']
 gas_vals = df1['monthly_gas_use']
 dater = df1['NORM_DATE']
 
-p1 = plt.bar(dater, elec_vals, width=20, color='#9cb9e5', label="Electricity")
-p2 = plt.bar(dater, gas_vals, width=20, bottom=elec_vals,color='#445175', label="Gas")
+p1 = plt.bar(dater, gas_vals, width=20, bottom=elec_vals,color='#445175', label="Gas")
+p2 = plt.bar(dater, elec_vals, width=20, color='#9cb9e5', label="Electricity")
+
 
 plt.xlabel("Month - Normative Date")
 plt.xticks(rotation=45)
@@ -49,13 +50,25 @@ plt.annotate('COVID-19 Lockdown', xy=('2020-03-17', 1000), xytext=('2020-03-18',
 plt.vlines('2020-06-14', ymin=1, ymax=2000, colors='#bbbbbb', linewidth=3)
 plt.annotate('Hot Tub Installed', xy=('2020-06-15', 1000), xytext=('2020-06-16', 1200), rotation='vertical', fontsize=10)
 
+
+# add explanation box about BTUs
+# x = [datetime.strptime('2017-01-01','%Y-%m-%d')]
+# x = matplotlib.dates.date2num(x)
+# plt.text(1750, x, "eggs", size=10, rotation=0.0,
+#          ha="left", va="center",
+#          bbox=dict(boxstyle="round",
+#                    ec=(1., 0.5, 0.5),
+#                    fc=(1., 0.8, 0.8),
+#                    )
+#          )
+
 # Make the figure wider to see things better
 #
 plt.title("Monthly Energy Use on: "+ today)
-plt.ylabel('Energy (kWh of electricity + Therms of gas')
+plt.ylabel('Energy (kWh of electricity + Therms (100,000 BTUs) of gas')
 plt.grid(b=True, which='major', color='#CCCCCC', linestyle='--')
 plt.grid(b=True, which='minor', color='#CCCCCC', linestyle=':')
-plt.legend(loc='lower left', shadow=True)
+plt.legend(loc='upper left', shadow=True)
 plt.tight_layout() # optional to fix certain layout issues.
 plt.savefig('monthly_stacked_energy_use.png', dpi=200)
 plt.show()
