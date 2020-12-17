@@ -22,14 +22,14 @@ my_query2017 = ''' SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_KPWM_weekly`
 df1 = pd.read_sql_query(my_query2017,engine)
 tempf_vals2017 = df1['w_temp_f_avg']
 dater2017 = df1['WEEKW']
-plt.plot(dater2017, tempf_vals2017, linestyle="", color="red", linewidth=1, marker='o', label="2017", markersize=8)
+plt.plot(dater2017, tempf_vals2017, linestyle="", color="#bf8394", linewidth=1, marker='o', label="2017", markersize=8)
 
 ### 2018 
 my_query2018 = ''' SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_KPWM_weekly` WHERE (YEARY = 2018) and WEEKW <= 52;'''
 df2018 = pd.read_sql_query(my_query2018,engine)
 tempf_vals2018 = df2018['w_temp_f_avg']
 dater2018 = df2018['WEEKW']
-plt.plot(dater2018, tempf_vals2018, linestyle="", color="green", linewidth=1, marker='X', label="2018", markersize=6 )
+plt.plot(dater2018, tempf_vals2018, linestyle="", color="#a3d68f", linewidth=1, marker='X', label="2018", markersize=6 )
 
 ### 2019 
 my_query2019 = ''' SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_KPWM_weekly` WHERE (YEARY = 2019) and WEEKW <= 52;'''
@@ -61,7 +61,7 @@ maxweek = dfmaxweek['maxweek']
 plt.vlines(maxweek, ymin=1, ymax=80, colors='#29d193', linewidth=1)
 plt.annotate('Max Data Week', xy=(int(maxweek), 0), xytext=(int(maxweek)+0.25, 4), rotation='vertical', fontsize=10)
 plt.vlines(52, ymin=1, ymax=80, colors='#0D0D0D', linewidth=1)
-plt.annotate('Winter Holidays', xy=(52, 0), xytext=(52.25, 30), rotation='vertical', fontsize=10)
+plt.annotate('Winter Holidays', xy=(52, 0), xytext=(52.25, 50), rotation='vertical', fontsize=10)
 plt.vlines(21, ymin=1, ymax=80, colors='#0D0D0D', linewidth=1)
 plt.annotate('May 25', xy=(21, 0), xytext=(21+0.25, 4), rotation='vertical', fontsize=10)
 plt.vlines(25, ymin=1, ymax=80, colors='#0D0D0D', linewidth=1)
