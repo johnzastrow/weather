@@ -43,7 +43,7 @@ my_query2020 = ''' SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_E4229_weekly
 df1 = pd.read_sql_query(my_query2020,engine)
 tempf_vals2020 = df1['w_temp_f_avg']
 dater2020 = df1['WEEKW']
-plt.plot(dater2020, tempf_vals2020, linestyle="", color="#b752bf", linewidth=1, marker='>', label="2020", markersize=8)
+plt.plot(dater2020, tempf_vals2020, linestyle="", color="#a27cb7", linewidth=1, marker='>', label="2020", markersize=8)
 
 ### 2021 
 my_query2021 = ''' SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_E4229_weekly` WHERE (YEARY = 2021) and WEEKW <= 52;'''
