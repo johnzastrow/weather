@@ -30,41 +30,53 @@ print(daym30)
 # Make the figure wider to see things better
 plt.figure(figsize=(12,6))
 
-engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@localhost:3306/weather')
+engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@192.168.1.7:3306/weather')
 
 ### E1248 
 ### 2017 = 730 days from today
 my_query2017 = '''  SELECT `day_of_year`, YEAR(d_utc) AS yeary, `temp_f_davg` , temp_f_davg - temp_f_dmin AS temp_f_min , temp_f_dmin, temp_f_dmax - temp_f_davg AS temp_f_max ,temp_f_dmax, recs FROM `weather`.`v_E1248_daily` 
- WHERE DATE(d_utc) BETWEEN CURDATE() - INTERVAL 760 DAY AND CURDATE() - INTERVAL 730 DAY ORDER BY day_of_year ASC;'''
+ WHERE DATE(d_utc) BETWEEN CURDATE() - INTERVAL 1125 DAY AND CURDATE() - INTERVAL 1095 DAY ORDER BY day_of_year ASC;'''
 df1 = pd.read_sql_query(my_query2017,engine)
 tempf_vals2017 = df1['temp_f_davg']
 dater2017 = df1['day_of_year']
 lower_y_error2018 = df1['temp_f_min']
 upper_y_error2018 = df1['temp_f_max']
 y_error = [lower_y_error2018, upper_y_error2018]
-plt.errorbar(dater2017, tempf_vals2017, yerr = y_error, fmt='-o', ecolor='gray', label="2017/2018", color='gray', elinewidth=4)
+plt.errorbar(dater2017, tempf_vals2017, yerr = y_error, fmt='-o', ecolor='gray', label="2017/2018", color='gray', elinewidth=1)
 
 ### 2018 = 365 days from today
 my_query2018 = '''  SELECT `day_of_year`, YEAR(d_utc) AS yeary, `temp_f_davg` , temp_f_davg - temp_f_dmin AS temp_f_min , temp_f_dmin, temp_f_dmax - temp_f_davg AS temp_f_max ,temp_f_dmax, recs FROM `weather`.`v_E1248_daily` 
- WHERE DATE(d_utc) BETWEEN CURDATE() - INTERVAL 395 DAY AND CURDATE() - INTERVAL 365 DAY ORDER BY day_of_year ASC;'''
+ WHERE DATE(d_utc) BETWEEN CURDATE() - INTERVAL 760 DAY AND CURDATE() - INTERVAL 730 DAY ORDER BY day_of_year ASC;'''
 df1 = pd.read_sql_query(my_query2018,engine)
 tempf_vals2018 = df1['temp_f_davg']
 dater2018 = df1['day_of_year']
 lower_y_error2018 = df1['temp_f_min']
 upper_y_error2018 = df1['temp_f_max']
 y_error = [lower_y_error2018, upper_y_error2018]
-plt.errorbar(dater2018, tempf_vals2018, yerr = y_error, fmt='-o', ecolor='orange', label="2018/2019", color='orange', elinewidth=2)
+plt.errorbar(dater2018, tempf_vals2018, yerr = y_error, fmt='-o', ecolor='pink', label="2018/2019", color='pink', elinewidth=1)
 
 ### 2019 = 365 days from today
 my_query2019 = '''  SELECT `day_of_year`, YEAR(d_utc) AS yeary, `temp_f_davg` , temp_f_davg - temp_f_dmin AS temp_f_min , temp_f_dmin, temp_f_dmax - temp_f_davg AS temp_f_max ,temp_f_dmax, recs FROM `weather`.`v_E1248_daily` 
- WHERE DATE(d_utc) BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE() ORDER BY day_of_year ASC;'''
+ WHERE DATE(d_utc) BETWEEN CURDATE() - INTERVAL 395 DAY AND CURDATE() - INTERVAL 365 DAY ORDER BY day_of_year ASC;'''
 df1 = pd.read_sql_query(my_query2019,engine)
 tempf_vals2019 = df1['temp_f_davg']
 dater2019 = df1['day_of_year']
 lower_y_error2019 = df1['temp_f_min']
 upper_y_error2019 = df1['temp_f_max']
 y_error = [lower_y_error2019, upper_y_error2019]
-plt.errorbar(dater2019, tempf_vals2019, yerr = y_error, fmt='-o', ecolor='blue', label="2019/2020", color='blue')
+plt.errorbar(dater2019, tempf_vals2019, yerr = y_error, fmt='-o', ecolor='orange', label="2019/2020", color='orange')
+
+### 2020 = 365 days from today. Trying limiting to just this year - JCZ Jan 2, 2021
+my_query2020 = '''  SELECT `day_of_year`, YEAR(d_utc) AS yeary, `temp_f_davg` , temp_f_davg - temp_f_dmin AS temp_f_min , temp_f_dmin, temp_f_dmax - temp_f_davg AS temp_f_max ,temp_f_dmax, recs FROM `weather`.`v_E1248_daily` 
+ WHERE DATE(d_utc) BETWEEN CURDATE() - INTERVAL 30 DAY AND CURDATE() AND YEAR(d_utc) = 2021 ORDER BY day_of_year ASC;'''
+df1 = pd.read_sql_query(my_query2020,engine)
+tempf_vals2020 = df1['temp_f_davg']
+dater2020 = df1['day_of_year']
+lower_y_error2020 = df1['temp_f_min']
+upper_y_error2020 = df1['temp_f_max']
+y_error = [lower_y_error2020, upper_y_error2020]
+plt.errorbar(dater2020, tempf_vals2020, yerr = y_error, fmt='-o', ecolor='blue', label="2020/2021", color='blue')
+
 
 plt.vlines(int(dayofyear), ymin=1, ymax=80, colors='red', linewidth=1)
 plt.annotate('This day', xy=(int(dayofyear), 0), xytext=(int(dayofyear)+0.25, 50), rotation='vertical', fontsize=10, color='red')
