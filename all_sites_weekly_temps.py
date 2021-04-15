@@ -15,7 +15,7 @@ plotweek = int(todayweek) - 12
 print(str(plotweek) + " :Plotweek")
 print(str(todayweek) + " :todayweek")
 print ("when todayweek is greater than 12, set plotweek back to -12. It doesn't work in the first few month.")
-# TODO: make plotweek smarter about the beginning of the year
+# TODO: make pgitlotweek smarter about the beginning of the year
 print (str(todayyear)+" :todayyear")
 
 # SELECT `WEEKW`, ROUND(MIN(w_temp_f_avg)-10, -1) AS min_week_avg, ROUND(MAX(w_temp_f_avg)+10, -1) AS max_week_avg  
