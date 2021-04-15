@@ -58,6 +58,9 @@ plt.annotate('Hot Tub Installed', xy=('2020-06-15', 1000), xytext=('2020-06-16',
 plt.vlines('2021-01-01', ymin=1, ymax=2000, colors='#0D0D0D', linewidth=3)
 plt.annotate('2021', xy=('2021-01-03', 1000), xytext=('2021-01-04', 1200), rotation='vertical', fontsize=10)
 
+plt.vlines('2021-04-12', ymin=1, ymax=2000, colors='#0D0D0D', linewidth=3)
+plt.annotate('Softub Installed', xy=('2021-04-14', 1000), xytext=('2021-04-015', 1200), rotation='vertical', fontsize=10)
+
 
 # add explanation box about BTUs
 # x = [datetime.strptime('2017-01-01','%Y-%m-%d')]

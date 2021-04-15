@@ -12,7 +12,11 @@ print(today)
 todayweek = (datetime.datetime.now().strftime("%W"))
 todayyear = (datetime.datetime.now().strftime("%Y"))
 plotweek = int(todayweek) - 12
-print(plotweek)
+print(str(plotweek) + " :Plotweek")
+print(str(todayweek) + " :todayweek")
+print ("when todayweek is greater than 12, set plotweek back to -12. It doesn't work in the first few month.")
+# TODO: make plotweek smarter about the beginning of the year
+print (str(todayyear)+" :todayyear")
 
 # SELECT `WEEKW`, ROUND(MIN(w_temp_f_avg)-10, -1) AS min_week_avg, ROUND(MAX(w_temp_f_avg)+10, -1) AS max_week_avg  
 # FROM `weather`.`v_e4229_weekly` WHERE (YEARY = 2019 AND WEEKW >= 29)
@@ -20,7 +24,8 @@ print(plotweek)
 # Make the figure wider to see things better
 plt.figure(figsize=(12,6))
 
-engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@localhost:3306/weather')
+engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@192.168.1.7:3306/weather')
+
 
 ### E4229 
 my_queryE4229 = "SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_E4229_weekly` WHERE (YEARY = " + str(todayyear) + " and WEEKW >= "+str(plotweek)+")"
@@ -28,6 +33,8 @@ df1 = pd.read_sql_query(my_queryE4229,engine)
 tempf_valsE4229 = df1['w_temp_f_avg']
 daterE4229 = df1['WEEKW']
 plt.plot(daterE4229, tempf_valsE4229, linestyle="", color="red", linewidth=1, marker='o', label="E4229 (65m)", markersize=4)
+print (daterE4229)
+print(plt.plot)
 
 ### E4279 
 my_queryE4279 = "SELECT `WEEKW`, `w_temp_f_avg` FROM `weather`.`v_E4279_weekly` WHERE (YEARY = " + str(todayyear) + " and WEEKW >= "+str(plotweek)+")"
