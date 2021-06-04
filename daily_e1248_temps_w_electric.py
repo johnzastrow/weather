@@ -28,7 +28,7 @@ engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@127.0.0.1:3306/w
 
 ### E1248 Temps
 my_query = ''' SELECT `d_utc`, `temp_f_davg` , temp_f_davg - temp_f_dmin AS temp_f_min , temp_f_dmax - temp_f_davg AS 
-temp_f_max FROM `v_E1248_daily` WHERE DATE(d_utc) BETWEEN CURDATE() - INTERVAL 60 DAY AND CURDATE(); '''
+temp_f_max FROM `v_E1248_daily` WHERE DATE(d_utc) BETWEEN CURDATE() - INTERVAL 60 DAY AND CURDATE() and temp_f_dmin > 0; '''
 df1 = pd.read_sql_query(my_query,engine)
 tempf_vals = df1['temp_f_davg']
 dater = df1['d_utc']
@@ -59,7 +59,7 @@ ax.set_ylabel("Temperature (F)",color="black",fontsize=12)
 # twin object for two different y-axis on the sample plot
 ax2=ax.twinx()
 # make a plot with different y-axis using second axis object
-ax2.plot(dater_elec, elec_vals,color="black",marker="o", markersize=2, label="E1248 Elec")
+ax2.plot(dater_elec, elec_vals,color="black",marker="o", markersize=2, label="Daily electricity")
 ax2.set_ylabel("Electricity Usage (kWh / day)",color="black",fontsize=12)
 
 # Drawings
@@ -69,6 +69,10 @@ plt.annotate('Softub Installed', xy=('2021-04-11', 50), xytext=('2021-04-11', 15
 plt.annotate('Softub moved outside', xy=('2021-05-07', 50), xytext=('2021-05-07', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
 plt.annotate('Trip Start', xy=('2021-04-19', 50), xytext=('2021-04-19', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
 plt.annotate('Trip Stop', xy=('2021-04-28', 50), xytext=('2021-04-28', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
+plt.hlines(50,'2021-04-01','2021-04-12', colors="#BBBBBB", linestyles='dashdot', label='Inflatable tub avg elec',linewidth=2 )
+plt.hlines(33,'2021-04-13','2021-05-30', colors="#BBBBBB", linestyles='dashed', label='Softub tub avg elec',linewidth=2 )
+
+
 
 # plt.ylabel("All Data  Avg, Min, Max Temp (F)")
 plt.xlabel("Date")
@@ -76,10 +80,10 @@ plt.xticks(rotation=45)
 plt.xticks(fontsize=8)
 plt.minorticks_on()
 
-plt.title("Last 60 Days of Air Temps (Avg, Max, Min) (F) at E1248 and Electricity Use from: "+ today)
+plt.title("Last 60 Days of Daily Air Temps (Avg, Max, Min) (F) at E1248 and Daily Electricity Use from: "+ today)
 plt.grid(b=True, which='major', color='#CCCCCC', linestyle='--')
 plt.grid(b=True, which='minor', color='#CCCCCC', linestyle=':')
-plt.legend(loc='lower left', shadow=True)
+plt.legend(loc='upper left', shadow=True)
 ax.legend(loc='lower right', shadow=True)
 plt.tight_layout() # optional to fix certain layout issues.
 plt.savefig('daily_e1248_elect_temp.png', dpi=200)

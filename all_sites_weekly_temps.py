@@ -24,7 +24,7 @@ print (str(todayyear)+" :todayyear")
 # Make the figure wider to see things better
 plt.figure(figsize=(12,6))
 
-engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@192.168.1.7:3306/weather')
+engine = sqlalchemy.create_engine('mysql+pymysql://jcz:yub.miha@127.0.0.1:3306/weather')
 
 
 ### E4229 
