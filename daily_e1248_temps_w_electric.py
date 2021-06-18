@@ -63,14 +63,14 @@ ax2.plot(dater_elec, elec_vals,color="black",marker="o", markersize=2, label="Da
 ax2.set_ylabel("Electricity Usage (kWh / day)",color="black",fontsize=12)
 
 # Drawings
-plt.annotate('Saluspa Hot tub in garage', xy=('2021-04-01', 50), xytext=('2021-04-01', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
-plt.vlines('2021-04-12', ymin=5, ymax=100, colors='#5ca800', linewidth=3)
-plt.annotate('Softub Installed', xy=('2021-04-11', 50), xytext=('2021-04-11', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
-plt.annotate('Softub moved outside', xy=('2021-05-07', 50), xytext=('2021-05-07', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
-plt.annotate('Trip Start', xy=('2021-04-19', 50), xytext=('2021-04-19', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
-plt.annotate('Trip Stop', xy=('2021-04-28', 50), xytext=('2021-04-28', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
-plt.hlines(50,'2021-04-01','2021-04-12', colors="#BBBBBB", linestyles='dashdot', label='Inflatable tub avg elec',linewidth=2 )
-plt.hlines(33,'2021-04-13','2021-05-30', colors="#BBBBBB", linestyles='dashed', label='Softub tub avg elec',linewidth=2 )
+# plt.annotate('Saluspa Hot tub in garage', xy=('2021-04-01', 50), xytext=('2021-04-01', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
+# plt.vlines('2021-04-12', ymin=5, ymax=100, colors='#5ca800', linewidth=3)
+# plt.annotate('Softub Installed', xy=('2021-04-11', 50), xytext=('2021-04-11', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
+# plt.annotate('Softub moved outside', xy=('2021-05-07', 50), xytext=('2021-05-07', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
+# plt.annotate('Trip Start', xy=('2021-04-19', 50), xytext=('2021-04-19', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
+# plt.annotate('Trip Stop', xy=('2021-04-28', 50), xytext=('2021-04-28', 15), rotation='vertical', fontsize=10, color='#5ca800', fontweight='heavy')
+# plt.hlines(50,'2021-04-01','2021-04-12', colors="#BBBBBB", linestyles='dashdot', label='Inflatable tub avg elec',linewidth=2 )
+plt.hlines(33,'2021-05-13','2021-06-01', colors="#BBBBBB", linestyles='dashed', label='Softub tub avg elec',linewidth=2 )
 
 
 
