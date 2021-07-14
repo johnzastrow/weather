@@ -11,5 +11,7 @@ python3 weeknum.py
 python3 all_e1248weekly_temps_w_electric.py
 python3 all_sites_daily_temp_ranges.py
 python3 daily_e1248_temps_w_electric.py 
-
+python3 monthly_elec_cost.py
+python3 monthly_electric_cost_correlation.py
+python3 monthly_elec_cost.py
 ./xfer.sh
