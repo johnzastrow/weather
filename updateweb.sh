@@ -14,4 +14,9 @@ python3 daily_e1248_temps_w_electric.py
 python3 monthly_elec_cost.py
 python3 monthly_electric_cost_correlation.py
 python3 monthly_elec_cost.py
+
+python3 weekly_HDD65_elec_use_correlation_2020_after.py
+python3 weekly_HDD65_elec_use_correlation_lt2020.py
+python3 weekly_temp_elec_use_correlation_2020_after.py
+python3 weekly_temp_elec_use_correlation_lt2020.py
 ./xfer.sh
